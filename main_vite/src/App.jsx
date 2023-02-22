@@ -1,12 +1,11 @@
 import { useState } from 'react'
+///utlities
+//import Routing from './utilities/Routing.jsx';
+import TheOrder from './utilities/TheOrder'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = ()=><>
+    <TheOrder />
+</>
 
-
-  return <>
-    Hello World
-  </>
-}
 
 export default App
