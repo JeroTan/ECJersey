@@ -1,12 +1,14 @@
 import { createContext } from "react"
 import App from '../App.jsx';
-let data = {
-    exist: false,
+let data = []
+/*format
+    login: false,
     firstname: 'sample',
     lastname: 'sample',
     age: 0,
-    profile: '',
-}
+    profile: ''
+*/
+
 export const Gbl_account = createContext(data);
 
 export default ()=><>

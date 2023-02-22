@@ -9,6 +9,6 @@ export default ()=>{
     const data_account = useContext(Gbl_account);
 
     return <>
-        <Navbar currentPage="Home" />
+        <Navbar currentPage="Jersey" />
     </>
 } 
