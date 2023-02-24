@@ -3,12 +3,15 @@ import { useContext, useState } from "react";
 import Navbar from '../utilities/Navbar';
 ///data
 import { Gbl_account } from '../data/Account.jsx';
+import { Gbl_currentPage } from "../data/CurrentPage";
 
 
 export default ()=>{
     const data_account = useContext(Gbl_account);
+    const data_currentPage = useContext(Gbl_currentPage);
+    data_currentPage.currentPage = 'jersey';
 
     return <>
-        <Navbar currentPage="Jersey" />
+        <Navbar />
     </>
 } 
