@@ -12,15 +12,16 @@ export default ()=>{
     const { currentPage } = useContext(Gbl_currentPage);
 
     // useState
-    const [sp_itemControl, sp_itemControlSet] = useState({});
+    const [sp_itemControl, sp_itemControlSet] = useState('Hello');
     // get the details of what item description should be pass in itemControl i.e. All, Jersey Shoes, Bottoms, Accessories
 
     return <>
         <div className="flex flex-wrap h-screen w-full">
             <Gbl_itemControl.Provider value={[sp_itemControl, sp_itemControlSet]}>
                 <Pg_itemControl />
+                <Pg_itemList />
             </Gbl_itemControl.Provider>
-            <Pg_itemList />
+            
         </div>
     
     </>
