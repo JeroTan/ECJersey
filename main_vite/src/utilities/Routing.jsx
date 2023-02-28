@@ -1,10 +1,12 @@
 import { useState } from 'react'
+import {createBrowserRouter, RouterProvider, useParams} from 'react-router-dom';
+//We will use use param later on
 
 //-- The component pages --//
 import Home from '../pages/Home.jsx';
 import Jersey from '../pages/Jersey.jsx';
 
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+
 
 const router = createBrowserRouter([
     {
@@ -22,6 +24,10 @@ const router = createBrowserRouter([
     {
         element:<></>,
         path:'*'
+    },
+    {
+        element:<></>,
+        path:'/items/:id'
     }
 ]);
 
