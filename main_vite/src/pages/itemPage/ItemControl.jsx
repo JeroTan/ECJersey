@@ -4,7 +4,6 @@ import { Gbl_itemControl } from "./ItemCatalog";
 import { Gbl_currentPage } from "../../data/CurrentPage";
 import { ItemCategory } from "./ItemCategory"
 import { Gbl_teamLogo } from "../../data/Team";
-import'./itemControl.css';
 /// utilites
 import Icon from '../../utilities/Icon';
 
@@ -95,7 +94,7 @@ export default ()=>{
     const checkBox = (containerClass='', ids = '', stater='', onChange_callback='', alt_name=false)=>{
         return <div className={containerClass+' flex flex-row'}>
             <input className="mr-2 appearance-none w-3 h-3 rounded bg-indigo-200 checked:bg-sky-500 indeterminate:bg-indigo-200" type="checkbox" id={ids} name={ids} value={ids} checked={stater[ids]} onChange={onChange_callback}/>
-            <label className="flex flex-row text-sm" htmlFor={ids}>{alt_name == false ? (ids.charAt(0).toUpperCase() + ids.slice(1)) : alt_name}</label>
+            <label className="flex flex-row text-sm m-0 p-0" htmlFor={ids}>{alt_name == false ? (ids.charAt(0).toUpperCase() + ids.slice(1)) : alt_name}</label>
         </div>
     };
     const imageInline = (source)=>{
@@ -107,7 +106,7 @@ export default ()=>{
     }
     const colorInline = (color)=>{
         return <>
-            <div className={`w-4 h-4 rounded-sm bg-${color}`}></div> 
+            <div className={`w-4 h-4 rounded-sm bg-${color} mb-1`}></div> 
         </>
     }
 
@@ -194,7 +193,7 @@ export default ()=>{
     controlUI.teams = <>
         <h4 className="font-bold text-indigo-100">Teams</h4>
         <div className="ml-2 flex flex-wrap">
-            {checkBox('w-6/12 pb-2', 'allTeam', sp_teamCheckbox, hndl_teamCheckbox, 'All')}
+            {checkBox('w-6/12 pb-2', 'allTeam', sp_teamCheckbox, hndl_teamCheckbox, <span>All</span>)}
             {checkBox('w-6/12 pb-2', 'hawks', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.hawks)} Hawks</> )}
             {checkBox('w-6/12 pb-2', 'celtics', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.celtics)} Celtics</> )}
             {checkBox('w-6/12 pb-2', 'nets', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.nets)} Nets</> )}
@@ -252,7 +251,7 @@ export default ()=>{
     controlUI.sizes = <>
         <h4 className="font-bold text-indigo-100">Sizes</h4>
         <div className="ml-2 flex flex-wrap">
-            {checkBox('w-4/12 pb-1', 'allSizes', sp_sizesCheckbox, hndl_sizesCheckbox, 'all')}
+            {checkBox('w-4/12 pb-1', 'allSizes', sp_sizesCheckbox, hndl_sizesCheckbox, 'All')}
             {checkBox('w-4/12 pb-1', 'x2sm', sp_sizesCheckbox, hndl_sizesCheckbox, '2xsm')}
             {checkBox('w-4/12 pb-1', 'xsm', sp_sizesCheckbox, hndl_sizesCheckbox, 'xsm')}
             {checkBox('w-4/12 pb-1', 'sm', sp_sizesCheckbox, hndl_sizesCheckbox, 'sm')}
@@ -284,7 +283,7 @@ export default ()=>{
     controlUI.colors = <>
         <h4 className="font-bold text-indigo-100">Colors</h4>
         <div className="ml-2 flex flex-wrap">
-            {checkBox('w-4/12 pb-1', 'allColors', sp_colorsCheckbox, hndl_colorsCheckbox, 'all')}
+            {checkBox('w-4/12 pb-1', 'allColors', sp_colorsCheckbox, hndl_colorsCheckbox, <span>All</span>)}
             {checkBox('w-4/12 pb-1', 'red', sp_colorsCheckbox, hndl_colorsCheckbox, colorInline('red-500'))}
             {checkBox('w-4/12 pb-1', 'yellow', sp_colorsCheckbox, hndl_colorsCheckbox, colorInline('yellow-500'))}
             {checkBox('w-4/12 pb-1', 'blue', sp_colorsCheckbox, hndl_colorsCheckbox, colorInline('blue-500'))}
@@ -299,10 +298,10 @@ export default ()=>{
     </>
 
     return <>
-        <aside className="h-full w-2/12 bg-zinc-900/[0.95] text-slate-200 flex flex-col p-3">
+        <aside className="w-2/12 bg-zinc-900/[0.95] text-slate-200 flex flex-col p-3 pb-20">
             <div className="flex w-full justify-between mb-2">
                 <h4 className="text-xl tracking-wider font-bold">Filter</h4>
-                <div className="flex cursor-pointer hidden">
+                <div className="md:hidden flex cursor-pointer">
                     <h4 className="text-indigo-700">Collapse</h4>
                     <Icon name="first_page" size="1.6" tailwindClassName="fill-indigo-700" />
                 </div>
@@ -313,7 +312,6 @@ export default ()=>{
                     {controlUI[item]}
                 </div>
             )}
-            
         </aside>
     </>
 }

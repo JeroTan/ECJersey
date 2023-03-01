@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 /// utilites
 import Navbar from '../utilities/Navbar';
+import Foorter from "../utilities/Foorter";
 /// data
 import { Gbl_account } from '../data/Account.jsx';
 import { Gbl_currentPage } from "../data/CurrentPage";
@@ -16,5 +17,6 @@ export default ()=>{
     return <>
         <Navbar />
         <Catalog />
+        <Foorter />
     </>
 } 

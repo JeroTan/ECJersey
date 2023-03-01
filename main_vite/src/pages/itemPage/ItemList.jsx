@@ -1,11 +1,23 @@
+import { useState, useContext } from 'react';
 import {useNavigate} from 'react-router-dom';
 
 /// utilities
 import { ColorTransform } from '../../utilities/ColorTransform';
+import Icon from '../../utilities/Icon';
+
+/// pages
+import { Gbl_itemControl } from './ItemCatalog';
 
 export default ()=>{
-    // - 
+    // useNavigate
     const rt_navigate = useNavigate();
+
+    // useContext
+    const [sp_itemControl, sp_itemControlSet] = useContext(Gbl_itemControl);
+
+
+    // useState
+    const [sp_viewType, sp_viewTypeSet] = useState('window');
 
     const ItemContainer = ({title='', navigation='', sizes=[], colors=[]})=>{
         let stopSize = false;
@@ -68,8 +80,27 @@ export default ()=>{
     }
 
     return <>
-        <main className="w-10/12 bg-slate-300 text-zinc-800 grid gap-10 grid-cols-5 auto-rows-max box-border p-10">
-            <ItemContainer title="Lakers no.3 | Electricity" navigation='item/1' sizes={['sm','lg','xl','2xl', '3xl', '4xl']} colors={['red', 'blue', 'yellow', 'green', 'brown', 'black', 'white']} />
+        <main className="w-10/12 bg-slate-300 text-zinc-800 box-border p-10">
+            <section className='w-full flex justify-between mb-10'>
+                <div>
+                    <button className={'p-2 px-3 bg-slate-200 flex flex-row items-center'}><Icon name="filter" size={1} tailwindClass="fill-zinc-800" /><span>Filter</span></button>
+                </div>
+                <div class="flex flex-row gap-2">
+                    {
+                        sp_viewType == 'window' ? 
+                        <button className={'p-2 px-3 bg-indigo-700 flex flex-row items-center'}><Icon name="window_view" size={1} tailwindClass="fill-slate-100" /></button> :
+                        <button onClick={()=>{sp_viewTypeSet('window')}} className={'p-2 px-3 bg-slate-200 flex flex-row items-center'}><Icon name="window_view" size={1} tailwindClass="fill-zinc-800" /></button>
+                    }
+                    {
+                        sp_viewType == 'list' ?
+                        <button className={'p-2 px-3 bg-indigo-700 flex flex-row items-center'}><Icon name="list_view" size={1} tailwindClass="fill-slate-100" /></button> :
+                        <button onClick={()=>{sp_viewTypeSet('list'); console.log(sp_viewType)}} className={'p-2 px-3 bg-slate-200 flex flex-row items-center'}><Icon name="list_view" size={1} tailwindClass="fill-zinc-800" /></button>
+                    }
+                </div>
+            </section>
+            <section className='w-full grid gap-10 grid-cols-5 auto-rows-max'>
+                <ItemContainer title="Lakers no.3 | Electricity" navigation='item/1' sizes={['sm','lg','xl','2xl', '3xl', '4xl']} colors={['red', 'blue', 'yellow', 'green', 'brown', 'black', 'white']} />
+            </section>
         </main>
     </>
 }

@@ -20,6 +20,15 @@ export default ({name, size=1, tailwindClass=''})=>{
         case 'bulb':
             return <svg xmlns="http://www.w3.org/2000/svg" width={(size*1)+'em'} height={(size*1)+'em'} viewBox="0 0 24 24"><path fill="none" className={tailwindClass} stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547Z"></path></svg>
         break;
+        case 'filter':
+            return <svg xmlns="http://www.w3.org/2000/svg" width={(size*1)+'em'} height={(size*1)+'em'} viewBox="0 0 24 24"><path className={tailwindClass} d="M3 4c2.01 2.59 7 9 7 9v7h4v-7s4.98-6.41 7-9H3z"></path></svg>
+        break;
+        case 'list_view':
+            return <svg xmlns="http://www.w3.org/2000/svg" width={(size*1)+'em'} height={(size*1)+'em'} viewBox="0 0 24 24"><path className={tailwindClass} d="M3 21v-8h18v8Zm0-10V3h18v8Z"></path></svg>
+        break;
+        case 'window_view':
+            return <svg xmlns="http://www.w3.org/2000/svg" width={(size*1)+'em'} height={(size*1)+'em'} viewBox="0 0 24 24"><path className={tailwindClass} d="M3 11V3h8v8Zm0 10v-8h8v8Zm10-10V3h8v8Zm0 10v-8h8v8Z"></path></svg>
+        break;
         case 'play':
             return <svg xmlns="http://www.w3.org/2000/svg" width={(size*1)+'em'} hheight={(size*1)+'em'} viewBox="0 0 24 24"><path className={tailwindClass} d="M9.5 9.325v5.35q0 .575.525.875q.525.3 1.025-.05l4.15-2.65q.475-.3.475-.85t-.475-.85L11.05 8.5q-.5-.35-1.025-.05q-.525.3-.525.875ZM12 22q-2.075 0-3.9-.788q-1.825-.787-3.175-2.137q-1.35-1.35-2.137-3.175Q2 14.075 2 12t.788-3.9q.787-1.825 2.137-3.175q1.35-1.35 3.175-2.138Q9.925 2 12 2t3.9.787q1.825.788 3.175 2.138q1.35 1.35 2.137 3.175Q22 9.925 22 12t-.788 3.9q-.787 1.825-2.137 3.175q-1.35 1.35-3.175 2.137Q14.075 22 12 22Z"></path></svg>
         break;
