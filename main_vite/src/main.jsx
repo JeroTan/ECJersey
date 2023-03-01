@@ -5,7 +5,7 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div id="TAILWINDLOADER" class="hidden"></div>
+    <div id="TAILWINDLOADER" className="hidden"></div>
     <App />
   </React.StrictMode>,
 )

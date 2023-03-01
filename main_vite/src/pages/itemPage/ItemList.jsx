@@ -7,6 +7,7 @@ import Icon from '../../utilities/Icon';
 
 /// pages
 import { Gbl_itemControl } from './ItemCatalog';
+import { Gbl_item } from '../../data/Item';
 
 export default ()=>{
     // useNavigate
@@ -14,10 +15,11 @@ export default ()=>{
 
     // useContext
     const [sp_itemControl, sp_itemControlSet] = useContext(Gbl_itemControl);
-
+    const d_item = useContext(Gbl_item);
 
     // useState
     const [sp_viewType, sp_viewTypeSet] = useState('window');
+    console.log(d_item);
 
     const ItemContainer = ({title='', navigation='', sizes=[], colors=[]})=>{
         let stopSize = false;
@@ -27,15 +29,15 @@ export default ()=>{
         <div className="w-full aspect-[30/35] bg-slate-200 box-border drop-shadow-xl p-3 cursor-pointer">
             {/*Image*/}
             <div className="w-full aspect-[10/8] overflow-hidden">
-                <div class="w-full h-full">
+                <div className="w-full h-full">
                     <img className="relative w-full h-full object-center object-contain" src="https://cdn.shopify.com/s/files/1/0414/8917/0599/products/AA7099-742_A_2400x.png?v=1593132488"/>
                 </div>
             </div>
             {/*Content*/}
-            <div class="mt-3">
-                <h4 class="font-bold text-indigo-500 pb-2">{title}</h4>
-                <div class="flex justify-between h-full relative">
-                    <div class="h-full">
+            <div className="mt-3">
+                <h4 className="font-bold text-indigo-500 pb-2">{title}</h4>
+                <div className="flex justify-between h-full relative">
+                    <div className="h-full">
                         <p>
                             {
                                 sizes.map( (item, index)=>{
@@ -51,7 +53,7 @@ export default ()=>{
                                 })
                             }
                         </p>
-                        <div class="flex gap-1">
+                        <div className="flex gap-1">
                             {
                                 colors.map( (item, index)=>{
                                     if(stopColor != false)
@@ -69,7 +71,7 @@ export default ()=>{
                             }
                         </div>
                     </div>
-                    <div class="absolute bottom-0 right-0">
+                    <div className="absolute bottom-0 right-0">
                         <label className="font-bold font-serif text-sm text-emerald-600">&#8369; 300</label>
                     </div>
                 </div>
@@ -83,18 +85,18 @@ export default ()=>{
         <main className="w-10/12 bg-slate-300 text-zinc-800 box-border p-10">
             <section className='w-full flex justify-between mb-10'>
                 <div>
-                    <button className={'p-2 px-3 bg-slate-200 flex flex-row items-center'}><Icon name="filter" size={1} tailwindClass="fill-zinc-800" /><span>Filter</span></button>
+                    <button className={'p-2 px-3 bg-slate-200 flex flex-row items-center'}><Icon name="filter" size={1} tailwindClassName="fill-zinc-800" /><span>Filter</span></button>
                 </div>
-                <div class="flex flex-row gap-2">
+                <div className="flex flex-row gap-2">
                     {
                         sp_viewType == 'window' ? 
-                        <button className={'p-2 px-3 bg-indigo-700 flex flex-row items-center'}><Icon name="window_view" size={1} tailwindClass="fill-slate-100" /></button> :
-                        <button onClick={()=>{sp_viewTypeSet('window')}} className={'p-2 px-3 bg-slate-200 flex flex-row items-center'}><Icon name="window_view" size={1} tailwindClass="fill-zinc-800" /></button>
+                        <button className={'p-2 px-3 bg-indigo-700 flex flex-row items-center'}><Icon name="window_view" size={1} tailwindClassName="fill-slate-100" /></button> :
+                        <button onClick={()=>{sp_viewTypeSet('window')}} className={'p-2 px-3 bg-slate-200 flex flex-row items-center'}><Icon name="window_view" size={1} tailwindClassName="fill-zinc-800" /></button>
                     }
                     {
                         sp_viewType == 'list' ?
-                        <button className={'p-2 px-3 bg-indigo-700 flex flex-row items-center'}><Icon name="list_view" size={1} tailwindClass="fill-slate-100" /></button> :
-                        <button onClick={()=>{sp_viewTypeSet('list'); console.log(sp_viewType)}} className={'p-2 px-3 bg-slate-200 flex flex-row items-center'}><Icon name="list_view" size={1} tailwindClass="fill-zinc-800" /></button>
+                        <button className={'p-2 px-3 bg-indigo-700 flex flex-row items-center'}><Icon name="list_view" size={1} tailwindClassName="fill-slate-100" /></button> :
+                        <button onClick={()=>{sp_viewTypeSet('list')}} className={'p-2 px-3 bg-slate-200 flex flex-row items-center'}><Icon name="list_view" size={1} tailwindClassName="fill-zinc-800" /></button>
                     }
                 </div>
             </section>

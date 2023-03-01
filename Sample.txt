@@ -1,20 +1,25 @@
 {
-	ID: 1,
-	Name: "pangalan",
-	Category: "jersey",
-	Price: 300,
-	Team: "Lakers",
-	Size: [2xsm, xsm, sm, md, lg, xl, 2xl, 3xl, 4xl],
-	Color: [red, yellow, blue, orange, green, violet, brown, pink, black, white],
-	Image: "1_jersey.png",
+        ID: 1,
+        Name: "pangalan",
+        Category: "jersey",
+        Price: 300,
+        Team: "Lakers",
+        Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
+        Color: ['red', 'yellow', 'blue', 'orange', 'green', 'violet', 'brown', 'pink', 'black', 'white'],
+        Image: image_1,
 },
 {
-	ID: 2,
-	Name: "pangalan Nyaaaa",
-	Category: "bottoms",
-	Price: 3000,
-	Team: "Warriors",
-	Size: [2xsm, xsm, sm, md, lg, xl, 2xl, 3xl, 4xl],
-	Color: [red, yellow, blue, orange, green, violet, brown, pink, black, white],
-	Image: "2_jersey\.png",
+        ID: 2,
+        Name: "pangalan Nyaaaa",
+        Category: "bottoms",
+        Price: 3000,
+        Team: "Warriors",
+        Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
+        Color: ['red', 'yellow', 'blue', 'orange', 'green', 'violet', 'brown', 'pink', 'black', 'white'],
+        Image: image_2,
 },
+
+
+
+
+// Name image as 1_item.png > 2_item.png > 3_item.png and so on

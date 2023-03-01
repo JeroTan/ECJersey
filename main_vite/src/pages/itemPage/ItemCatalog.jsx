@@ -12,7 +12,7 @@ export default ()=>{
     const { currentPage } = useContext(Gbl_currentPage);
 
     // useState
-    const [sp_itemControl, sp_itemControlSet] = useState('Hello');
+    const [sp_itemControl, sp_itemControlSet] = useState({});
     // get the details of what item description should be pass in itemControl i.e. All, Jersey Shoes, Bottoms, Accessories
 
     return <>

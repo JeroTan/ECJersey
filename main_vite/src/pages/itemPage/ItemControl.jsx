@@ -1,6 +1,7 @@
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 /// page
 import { Gbl_itemControl } from "./ItemCatalog";
+import { Gbl_itemSearch } from "../../data/Search";
 import { Gbl_currentPage } from "../../data/CurrentPage";
 import { ItemCategory } from "./ItemCategory"
 import { Gbl_teamLogo } from "../../data/Team";
@@ -11,7 +12,8 @@ import Icon from '../../utilities/Icon';
 
 export default ()=>{
     // useContext
-    let [sp_itemControl, sp_itemControlSet] = useContext(Gbl_itemControl);
+    let [ sp_itemControl, sp_itemControlSet] = useContext(Gbl_itemControl);
+    let { gbl_search } = useContext(Gbl_itemSearch);
     let { currentPage } = useContext(Gbl_currentPage);
     let { logo } = useContext(Gbl_teamLogo);
     
@@ -88,6 +90,20 @@ export default ()=>{
         white: false
     })
 
+    // useEffect
+    useEffect(()=>{
+        sp_itemControlSet( {
+            category: sp_catCheckbox,
+            price:{
+                sort: sp_priceSort,
+                range: sp_priceRange
+            },
+            team: sp_teamCheckbox,
+            size: sp_sizesCheckbox,
+            color: sp_colorsCheckbox
+        } ); 
+    }, [])
+
     //-- I use this to initiate Ui of the control by dividing them per filter
     let controlUI = {};
     //-- I created a function box for check box so it became reusable
@@ -113,18 +129,18 @@ export default ()=>{
     //-- --//
     const hndl_catCheckbox = (event) => {
         const { id, checked } = event.target;
+        let temp = {};
         if(id == 'allCategory' && checked == true){
-            let temp = {};
             Object.keys(sp_catCheckbox).map( (keys)=> {
                 temp[keys] = false;
             })
             temp.allCategory = true;
-            sp_catCheckboxSet(temp);
         }
-        else{
-            sp_catCheckboxSet((prevsp_catCheckbox) => ({ ...prevsp_catCheckbox, [id]: checked, allCategory:false }));
-        }
-            
+        else
+            temp = { ...sp_catCheckbox, [id]: checked, allCategory:false }
+        
+        sp_catCheckboxSet(temp);
+        sp_itemControlSet((prevsp_itemControl)=> ({...prevsp_itemControl, category:temp}) ); 
     };
     controlUI.category = <>
         <h4 className="font-bold text-indigo-100">Category</h4>
@@ -140,6 +156,7 @@ export default ()=>{
     //-- --//
     const hndl_priceSort = (event)=>{
         sp_priceSortSet(event.target.value);
+        sp_itemControlSet((prevsp_itemControl)=> ({...prevsp_itemControl, price:{sort:event.target.value, range:sp_priceRange}}) ); 
     }
     const hndl_priceRange = (event)=>{
         let {id, value} = event.target;
@@ -148,7 +165,9 @@ export default ()=>{
         else if(id == 'max' && value != '' && sp_priceRange.min != '')
             value = value < sp_priceRange.min ? sp_priceRange.min : value;
         
-        sp_priceRangeSet({...sp_priceRange, [id]:value != '' || value != false ? value : false})
+        let temp = {...sp_priceRange, [id]:value != '' || value != false ? value : false};
+        sp_priceRangeSet(temp);
+        sp_itemControlSet((prevsp_itemControl)=> ({...prevsp_itemControl, price:{sort:sp_priceSort, range:temp}}) ); 
     }
     controlUI.price = <>
         <h4 className="font-bold text-indigo-100">Price</h4>
@@ -178,17 +197,18 @@ export default ()=>{
     //-- --//
     const hndl_teamCheckbox = (event)=>{
         const { id, checked } = event.target;
+        let temp = {};
         if(id=='allTeam' && checked == true){
-            let temp = {};
             Object.keys(sp_teamCheckbox).map( (keys)=> {
                 temp[keys] = false;
             })
             temp.allTeam = true;
-            sp_teamCheckboxSet(temp);
         }
-        else{
-            sp_teamCheckboxSet((prevsp_teamCheckbox) => ({ ...prevsp_teamCheckbox, [id]: checked , allTeam:false}));
-        }
+        else
+            temp = { ...sp_teamCheckbox, [id]: checked , allTeam:false};
+        
+        sp_teamCheckboxSet(temp);
+        sp_itemControlSet((prevsp_itemControl)=> ({...prevsp_itemControl, team:temp}) );
     }
     controlUI.teams = <>
         <h4 className="font-bold text-indigo-100">Teams</h4>
@@ -236,17 +256,18 @@ export default ()=>{
     //-- --//
     const hndl_sizesCheckbox = (event)=>{
         const { id, checked } = event.target;
+        let temp = {};
         if(id=='allSizes' && checked == true){
-            let temp = {};
             Object.keys(sp_sizesCheckbox).map( (keys)=> {
                 temp[keys] = false;
             })
             temp.allSizes = true;
-            sp_sizesCheckboxSet(temp);
         }
         else{
-            sp_sizesCheckboxSet((prevsp_sizesCheckbox) => ({ ...prevsp_sizesCheckbox, [id]: checked , allSizes:false}));
+            temp = { ...sp_sizesCheckbox, [id]: checked , allSizes:false}
         }
+        sp_sizesCheckboxSet(temp);
+        sp_itemControlSet((prevsp_itemControl)=> ({...prevsp_itemControl, size:temp}) );
     }
     controlUI.sizes = <>
         <h4 className="font-bold text-indigo-100">Sizes</h4>
@@ -268,17 +289,18 @@ export default ()=>{
     //-- --//
     const hndl_colorsCheckbox = (event)=>{
         const { id, checked } = event.target;
+        let temp = {};
         if(id=='allColors' && checked == true){
-            let temp = {};
             Object.keys(sp_colorsCheckbox).map( (keys)=> {
                 temp[keys] = false;
             })
-            temp.allColors = true;
-            sp_colorsCheckboxSet(temp);
+            temp.allColors = true;  
         }
         else{
-            sp_colorsCheckboxSet((prevsp_colorsCheckbox) => ({ ...prevsp_colorsCheckbox, [id]: checked , allColors:false}));
+            temp = { ...sp_colorsCheckbox, [id]: checked , allColors:false};
         }
+        sp_colorsCheckboxSet(temp);
+        sp_itemControlSet((prevsp_itemControl)=> ({...prevsp_itemControl, color:temp}) );
     }
     controlUI.colors = <>
         <h4 className="font-bold text-indigo-100">Colors</h4>

@@ -54,19 +54,17 @@ export const ItemGeter = ({search, category, price, team, size, color}, data)=>{
     }
 
     // Filter By Category
-    switch(category){
-        case 'jersey':
-            filteredData = looperOfItems(filteredData, (toCheck)=>{return toCheck.includes('jersey')}, 'Category' );
-        break;
-        case 'shoes':
-            filteredData = looperOfItems(filteredData, (toCheck)=>{return toCheck.includes('shoes')}, 'Category' );
-        break;
-        case 'bottoms':
-            filteredData = looperOfItems(filteredData, (toCheck)=>{return toCheck.includes('bottoms')}, 'Category' );
-        break;
-        case 'accessories':
-            filteredData = looperOfItems(filteredData, (toCheck)=>{return toCheck.includes('accessories')}, 'Category' );
-        break;
+    if(!category.allCategory){
+        let newFilteredData = [];
+        if(category.jersey == true)
+            newFilteredData = [...newFilteredData, ...looperOfItems(filteredData, (toCheck)=>{return toCheck.includes('jersey')}, 'Category' )];
+        if(category.shoes == true)
+            newFilteredData = [...newFilteredData, ...looperOfItems(filteredData, (toCheck)=>{return toCheck.includes('shoes')}, 'Category' )];
+        if(category.bottoms == true)
+            newFilteredData = [...newFilteredData, ...looperOfItems(filteredData, (toCheck)=>{return toCheck.includes('bottoms')}, 'Category' )];
+        if(category.acessories == true)
+            newFilteredData = [...newFilteredData, ...looperOfItems(filteredData, (toCheck)=>{return toCheck.includes('accessories')}, 'Category' )];
+        filteredData = newFilteredData;
     }
 
     // Filter By Price
@@ -90,7 +88,105 @@ export const ItemGeter = ({search, category, price, team, size, color}, data)=>{
             return Number(toCheck);
         }, 'Price' );
     }
+
+    // Filter by team
+    if(!team.allTeam){
+        let newFilteredData = [];
+        let tempFilteredData = filteredData;
+
+        
+        Object.keys(team).map((item)=>{
+            if(item == 'x76ers'){
+                if(team[item]== true){
+                    newFilteredData = [...newFilteredData ,...( filteredData.filter(item2=>{ return item2.Team.toLowerCase().includes('76ers') }) ) ];
+                }
+            }else if(item == 'trailblazers'){
+                if(team[item] == true){
+                    newFilteredData = [...newFilteredData ,...( filteredData.filter(item2=>{ return item2.Team.toLowerCase().includes('Trail Blazer') }) ) ];
+                }
+            }
+            else{
+                if(team[item] == true){
+                    newFilteredData = [...newFilteredData ,...( filteredData.filter(item2=>{ return item2.Team.toLowerCase().includes(item) }) ) ];
+                    newFilteredData.forEach(item => {
+                        const index = filteredData.findIndex(element=>element.id == item.id);
+                        if(index > -1){
+                            filteredData.splice(index, 1);
+                        }
+                    });
+                }
+                    
+            }
+        });
+
+        filteredData = newFilteredData;
+    }
+
     
+    // Filter by Size
+    if(!size.allSizes){
+        let newFilteredData = [];
+
+        const minimizeTransition = (size, altName = '')=>{
+            newFilteredData = [...newFilteredData ,...( filteredData.filter(item=>{ return item.Size.join(' ').toLowerCase().includes(altName == false ? size : altName) }) ) ];
+            newFilteredData.forEach(item => {
+                const index = filteredData.findIndex(element=>element.id == item.id);
+                if(index > -1){
+                    filteredData.splice(index, 1);
+                }
+            });
+        }
+
+        Object.keys(size).map((item)=>{
+            if(item == 'x2sm'){
+                if(size[item]== true){
+                    minimizeTransition(size, '2xsm');
+                }
+            }else if(item == 'x2l'){
+                if(size[item] == true){
+                    minimizeTransition(size, '2xl');
+                }
+            }
+            else if(item == 'x3l'){
+                if(size[item] == true){
+                    minimizeTransition(size, '3xl');
+                }
+            }
+            else if(item == 'x4l'){
+                if(size[item] == true){
+                    minimizeTransition(size, '4xl');
+                }
+            }
+            else{
+                if(size[item] == true){
+                    minimizeTransition(size);
+                }
+            }
+        });
+
+        filteredData = newFilteredData;
+    }
+
+    //Filter by Color
+    if(!color.allColors){
+        let newFilteredData = [];
+
+        Object.keys(color).map((item)=>{
+            if(color[item] == true){
+
+                newFilteredData = [...newFilteredData, ...( filteredData.filter(item2=>{ return item2.color.join(' ').toLowerCase().includes(item) }) ) ];
+                newFilteredData.forEach(item2 => {
+                    const index = filteredData.findIndex(element=>element.id == item2.id);
+                    if(index > -1){
+                        filteredData.splice(index, 1);
+                    }
+                });
+
+            }
+        });
+
+        filteredData = newFilteredData;
+    }
 
     return filteredData;
 }
