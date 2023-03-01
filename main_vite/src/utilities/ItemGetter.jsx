@@ -1,8 +1,9 @@
 
 
-export const ItemGeter = ({search, category, price, team, size, color}, data)=>{
+export const ItemGetter = ([search, category, price, team, size, color], data)=>{
     let filteredData = data;
-
+    console.log(search, category, price, team, size, color);
+    /*
     const looperOfKeys = (element, condition ) =>{
         let checkValid = false;
 
@@ -67,6 +68,7 @@ export const ItemGeter = ({search, category, price, team, size, color}, data)=>{
         filteredData = newFilteredData;
     }
 
+    
     // Filter By Price
     switch(price.sort){
         case 'MinToMax':
@@ -187,6 +189,7 @@ export const ItemGeter = ({search, category, price, team, size, color}, data)=>{
 
         filteredData = newFilteredData;
     }
+    */
 
     return filteredData;
 }

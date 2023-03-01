@@ -3,7 +3,6 @@ import { useContext, useState, useEffect } from "react"
 import { Gbl_itemControl } from "./ItemCatalog";
 import { Gbl_itemSearch } from "../../data/Search";
 import { Gbl_currentPage } from "../../data/CurrentPage";
-import { ItemCategory } from "./ItemCategory"
 import { Gbl_teamLogo } from "../../data/Team";
 /// utilites
 import Icon from '../../utilities/Icon';
@@ -12,8 +11,8 @@ import Icon from '../../utilities/Icon';
 
 export default ()=>{
     // useContext
-    let [ sp_itemControl, sp_itemControlSet] = useContext(Gbl_itemControl);
-    let { gbl_search } = useContext(Gbl_itemSearch);
+    let [ sp_itemControl, sp_itemControlSet ] = useContext(Gbl_itemControl);
+    let gbl_search = useContext(Gbl_itemSearch);
     let { currentPage } = useContext(Gbl_currentPage);
     let { logo } = useContext(Gbl_teamLogo);
     

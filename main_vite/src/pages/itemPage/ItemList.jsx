@@ -1,13 +1,15 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useRef } from 'react';
 import {useNavigate} from 'react-router-dom';
 
 /// utilities
 import { ColorTransform } from '../../utilities/ColorTransform';
+import { ItemGetter } from '../../utilities/ItemGetter';
 import Icon from '../../utilities/Icon';
 
 /// pages
 import { Gbl_itemControl } from './ItemCatalog';
 import { Gbl_item } from '../../data/Item';
+import { Gbl_itemSearch } from '../../data/Search';
 
 export default ()=>{
     // useNavigate
@@ -15,11 +17,14 @@ export default ()=>{
 
     // useContext
     const [sp_itemControl, sp_itemControlSet] = useContext(Gbl_itemControl);
+    const [sp_search, sp_searchSet] = useContext(Gbl_itemSearch);
     const d_item = useContext(Gbl_item);
 
     // useState
     const [sp_viewType, sp_viewTypeSet] = useState('window');
-    console.log(d_item);
+
+    // useRef
+    const rf_searchButton = useRef('');
 
     const ItemContainer = ({title='', navigation='', sizes=[], colors=[]})=>{
         let stopSize = false;
@@ -81,6 +86,7 @@ export default ()=>{
         
     }
 
+    //console.log(ItemGetter([sp_search, sp_itemControl.category, sp_itemControl.price, sp_itemControl.team, sp_itemControl.size, sp_itemControl.color], d_item));
     return <>
         <main className="w-10/12 bg-slate-300 text-zinc-800 box-border p-10">
             <section className='w-full flex justify-between mb-10'>

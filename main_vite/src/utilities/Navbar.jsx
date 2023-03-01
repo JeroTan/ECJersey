@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 /// utilities
 import Icon from './Icon.jsx';
@@ -40,11 +40,14 @@ export default ()=>{
     const [sp_openBurger, sp_openBurgerSet] = useState(false);
 
     // useContext
-    const dt_searchQuery = useContext(Gbl_itemSearch);
+    let [sp_search, sp_searchSet]  = useContext(Gbl_itemSearch);
     const { currentPage } = useContext(Gbl_currentPage);
 
     // useNavigate
     const navigate = useNavigate();
+
+    // useRef
+    const rf_searchButton = useRef('');
 
     // Logic Ext
     const {links, bgs} = vrt_css(currentPage);
@@ -80,6 +83,12 @@ export default ()=>{
             </div>
         </>
     }
+
+    // handler
+    const hndl_searchButton = ()=>{
+        sp_searchSet(rf_searchButton.current.value);
+    }
+    
 
     //// Contents ////
     let rendering = <>
@@ -117,10 +126,10 @@ export default ()=>{
             </div>
             <div className="h-full flex items-center sm:mx-3 mx-0">
                 <div className="flex">
-                    <input type="text" className="h-8 lg:w-96 md:w-64 sm:w-96 bg-zinc-900 focus:outline outline-2 text-slate-100 px-2 outline-indigo-700" />
+                    <input type="text" className="h-8 lg:w-96 md:w-64 sm:w-96 bg-zinc-900 focus:outline outline-2 text-slate-100 px-2 outline-indigo-700" ref={rf_searchButton}/>
                 </div>
                 <div className="flex">
-                    <button className="h-8 w-12 bg-indigo-700 flex justify-center items-center">
+                    <button className="h-8 w-12 bg-indigo-700 flex justify-center items-center" onClick={hndl_searchButton}>
                         <Icon name="search" size="1.4" tailwindClass="fill-slate-200"/>
                     </button>
                 </div>

@@ -1,10 +1,17 @@
-import { createContext } from "react"
+import { createContext, useState } from "react"
 import App from '../App.jsx';
+import ItemList from "../pages/itemPage/ItemList.jsx";
+import Navbar from "../utilities/Navbar.jsx";
 
-export const Gbl_itemSearch = createContext({gbl_search:''});
+export const Gbl_itemSearch = createContext([]);
 
-export default ()=><>
-    <Gbl_itemSearch .Provider value={{gbl_search:''}}>
-        <App />
-    </Gbl_itemSearch .Provider>
-</>
+export default ()=>{
+    const [sp_search, sp_searchSet] = useState({});
+    return <>
+        <Gbl_itemSearch.Provider value={[sp_search, sp_searchSet]}>
+            <ItemList />
+            <Navbar />
+            <App />
+        </Gbl_itemSearch.Provider>
+    </>
+}
