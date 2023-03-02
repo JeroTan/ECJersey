@@ -2,22 +2,25 @@
 
 export const ItemGetter = ([search, category, price, team, size, color], data)=>{
     let filteredData = data;
-    console.log(search, category, price, team, size, color);
-    /*
+     
+    const recalibrateArray = (theArray)=>{
+        let tempArray = [];
+        for(const item in theArray){
+            tempArray[item] = theArray[item];
+        }
+        return tempArray;
+    }
+
     const looperOfKeys = (element, condition ) =>{
         let checkValid = false;
 
         Object.keys(element).map(
             key=> {
                 let tempData = element[key];
-                if(key == 'Color'){
-                    tempData = tempData.join(' ');
-                }
-                else if(key == 'Size'){
-                    tempData = tempData.join(' ');
-                }
-                tempData = tempData.toLowerCase();
-                if(condition(tempValid)){
+                if(key == 'Color') tempData = tempData.join(' ');
+                else if(key == 'Size') tempData = tempData.join(' ');
+                tempData = tempData.toString().toLowerCase();
+                if(condition(tempData)){
                     checkValid = true;
                 }
                 return true;
@@ -32,7 +35,7 @@ export const ItemGetter = ([search, category, price, team, size, color], data)=>
         if(element.isArray()){
             tempData = tempData.join(' ');
         }
-        tempData = tempData.toLowerCase();
+        tempData = tempData.toString().toLowerCase();
 
         return condition(tempData);
     }
@@ -51,24 +54,56 @@ export const ItemGetter = ([search, category, price, team, size, color], data)=>
 
     // SEARCH 
     if(search){
-        filteredData = looperOfItems(filteredData, (toCheck)=>{return toCheck.includes(toLowerCase.search)} );
+        //filteredData = looperOfItems(filteredData, (toCheck)=>{return toCheck.includes(search.toString().toLowerCase())} );
+        filteredData = filteredData.filter(item=>{
+            let checkValid = false;
+            Object.keys(item).forEach(item2=>{
+                let tempData = item[item2];
+                if(item2 == 'Color' || item2 == 'Size') tempData = tempData.join(' ');
+                tempData = tempData.toString().toLowerCase();
+                if(!checkValid) checkValid = tempData.includes(search.toLowerCase());
+            });
+            return checkValid;
+        });
     }
-
+    
+    category = recalibrateArray(category);
     // Filter By Category
     if(!category.allCategory){
         let newFilteredData = [];
+        let tempFilteredData = filteredData;
+        const filtering = (categoryType)=>{
+            // get all valid data
+            let newData = tempFilteredData.filter(item=>{
+                let temp = item.Category.toString().toLowerCase();
+                return temp.includes(categoryType);
+            });
+            console.log(newData);
+            // delete the data that are already selected
+            newData.forEach(item => {
+            const index = tempFilteredData.findIndex(element=>element.id == item.id);
+                if(index > -1){
+                    tempFilteredData.splice(index, 1);
+                }
+            });
+            console.log(newData);
+            console.log(newFilteredData);
+            newFilteredData = [...newFilteredData,newData];
+            console.log(newFilteredData);
+        }
+
         if(category.jersey == true)
-            newFilteredData = [...newFilteredData, ...looperOfItems(filteredData, (toCheck)=>{return toCheck.includes('jersey')}, 'Category' )];
+            filtering('jersey');
         if(category.shoes == true)
-            newFilteredData = [...newFilteredData, ...looperOfItems(filteredData, (toCheck)=>{return toCheck.includes('shoes')}, 'Category' )];
+            filtering('shoes');
         if(category.bottoms == true)
-            newFilteredData = [...newFilteredData, ...looperOfItems(filteredData, (toCheck)=>{return toCheck.includes('bottoms')}, 'Category' )];
+            filtering('bottoms');
         if(category.acessories == true)
-            newFilteredData = [...newFilteredData, ...looperOfItems(filteredData, (toCheck)=>{return toCheck.includes('accessories')}, 'Category' )];
+            filtering('accessories');
         filteredData = newFilteredData;
     }
 
-    
+    /*
     // Filter By Price
     switch(price.sort){
         case 'MinToMax':
@@ -191,5 +226,6 @@ export const ItemGetter = ([search, category, price, team, size, color], data)=>
     }
     */
 
+    //console.log(filteredData);
     return filteredData;
 }

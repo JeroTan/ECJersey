@@ -40,7 +40,7 @@ export default ()=>{
     const [sp_openBurger, sp_openBurgerSet] = useState(false);
 
     // useContext
-    let [sp_search, sp_searchSet]  = useContext(Gbl_itemSearch);
+    let {sp_search, sp_searchSet}  = useContext(Gbl_itemSearch);
     const { currentPage } = useContext(Gbl_currentPage);
 
     // useNavigate
@@ -62,7 +62,7 @@ export default ()=>{
 
     const Link_navOne = ({name="Home", link="/home", effect=""})=>{
         return <>
-            <div className={`relative h-full flex items-center px-5 ease-out duration-100 cursor-pointer ${effect}`} onClick={()=>navigate(link)}>
+            <div className={`relative h-full flex items-center px-5 ease-out duration-100 cursor-pointer ${effect}`} onClick={()=>hndl_navigateResetSearch(link)}>
                 <Link className={`relative myUnderline-child`}>{name}</Link>
             </div>
         </>
@@ -70,7 +70,7 @@ export default ()=>{
 
     const Link_navTwo = ({name="Home", link="/home", effect=""})=>{
         return <>
-            <div className={`relative px-2 mx-2 my-1 cursor-pointer ${effect}`} onClick={()=>navigate(link)}>
+            <div className={`relative px-2 mx-2 my-1 cursor-pointer ${effect}`} onClick={()=>hndl_navigateResetSearch(link)}>
                 <Link className={`relative myUnderline-child`}>{name}</Link>
             </div>
         </>
@@ -78,7 +78,7 @@ export default ()=>{
 
     const Link_navThree = ({name="Home", link="/home", effect=""})=>{
         return <>
-            <div className={`relative px-2 mx-2 my-2 cursor-pointer text-2xl ${effect}`} onClick={()=>navigate(link)}>
+            <div className={`relative px-2 mx-2 my-2 cursor-pointer text-2xl ${effect}`} onClick={()=>hndl_navigateResetSearch(link)}>
                 <Link className={`relative myUnderline-child`}>{name}</Link>
             </div>
         </>
@@ -87,6 +87,10 @@ export default ()=>{
     // handler
     const hndl_searchButton = ()=>{
         sp_searchSet(rf_searchButton.current.value);
+    }
+    const hndl_navigateResetSearch = (link)=>{
+        sp_searchSet('');
+        navigate(link);
     }
     
 

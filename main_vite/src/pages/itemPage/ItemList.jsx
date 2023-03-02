@@ -8,7 +8,7 @@ import Icon from '../../utilities/Icon';
 
 /// pages
 import { Gbl_itemControl } from './ItemCatalog';
-import { Gbl_item } from '../../data/Item';
+import { Gbl_items } from '../../data/Item';
 import { Gbl_itemSearch } from '../../data/Search';
 
 export default ()=>{
@@ -17,8 +17,8 @@ export default ()=>{
 
     // useContext
     const [sp_itemControl, sp_itemControlSet] = useContext(Gbl_itemControl);
-    const [sp_search, sp_searchSet] = useContext(Gbl_itemSearch);
-    const d_item = useContext(Gbl_item);
+    const { sp_search, sp_searchSet } = useContext(Gbl_itemSearch);
+    const { sp_items, sp_itemsSet } = useContext(Gbl_items);
 
     // useState
     const [sp_viewType, sp_viewTypeSet] = useState('window');
@@ -26,7 +26,7 @@ export default ()=>{
     // useRef
     const rf_searchButton = useRef('');
 
-    const ItemContainer = ({title='', navigation='', sizes=[], colors=[]})=>{
+    const ItemContainer = ({title='', navigation='', sizes=[], colors=[], image=''})=>{
         let stopSize = false;
         let stopColor = false;
 
@@ -35,7 +35,7 @@ export default ()=>{
             {/*Image*/}
             <div className="w-full aspect-[10/8] overflow-hidden">
                 <div className="w-full h-full">
-                    <img className="relative w-full h-full object-center object-contain" src="https://cdn.shopify.com/s/files/1/0414/8917/0599/products/AA7099-742_A_2400x.png?v=1593132488"/>
+                    <img className="relative w-full h-full object-center object-contain" src={image}/>
                 </div>
             </div>
             {/*Content*/}
@@ -85,8 +85,9 @@ export default ()=>{
         </>
         
     }
-
-    //console.log(ItemGetter([sp_search, sp_itemControl.category, sp_itemControl.price, sp_itemControl.team, sp_itemControl.size, sp_itemControl.color], d_item));
+  
+    let itemizer = ItemGetter([sp_search, sp_itemControl.category, sp_itemControl.price, sp_itemControl.team, sp_itemControl.size, sp_itemControl.color], sp_items)
+   
     return <>
         <main className="w-10/12 bg-slate-300 text-zinc-800 box-border p-10">
             <section className='w-full flex justify-between mb-10'>
@@ -107,7 +108,13 @@ export default ()=>{
                 </div>
             </section>
             <section className='w-full grid gap-10 grid-cols-5 auto-rows-max'>
-                <ItemContainer title="Lakers no.3 | Electricity" navigation='item/1' sizes={['sm','lg','xl','2xl', '3xl', '4xl']} colors={['red', 'blue', 'yellow', 'green', 'brown', 'black', 'white']} />
+                {
+                    itemizer.length > 0 ?
+                    itemizer.map(item=>{
+                        return <ItemContainer key={item.ID} title={item.Name} navigation={`item/${item.ID}`} sizes={item.Size} colors={item.Color} image={item.Image}/>
+                    }) :
+                    ''
+                }
             </section>
         </main>
     </>

@@ -1,9 +1,12 @@
 import Routing from './Routing';
 import CSSaddon from './CSSaddon';
+import Provider from './Provider';
 
 export default ()=>{
     return <>
-        <CSSaddon />
-        <Routing />
+        <Provider>
+            <CSSaddon />
+            <Routing />
+        </Provider>
     </>
 }
