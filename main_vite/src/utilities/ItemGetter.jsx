@@ -71,14 +71,18 @@ export const ItemGetter = ([search, category, price, team, size, color], data)=>
     // Filter By Category
     if(!category.allCategory){
         let newFilteredData = [];
-        let tempFilteredData = filteredData;
-        const filtering = (categoryType)=>{
+        let tempFilteredData = [];
+        filteredData.forEach((item, index)=>{
+            tempFilteredData[index] = filteredData[index];
+        });
+
+        const filtering = (categoryType, [newFilteredData, tempFilteredData])=>{
             // get all valid data
-            let newData = tempFilteredData.filter(item=>{
-                let temp = item.Category.toString().toLowerCase();
+            let newData = tempFilteredData.filter(item3=>{
+                let temp = item3.Category.toString().toLowerCase();
                 return temp.includes(categoryType);
             });
-            console.log(newData);
+
             // delete the data that are already selected
             newData.forEach(item => {
             const index = tempFilteredData.findIndex(element=>element.id == item.id);
@@ -86,20 +90,18 @@ export const ItemGetter = ([search, category, price, team, size, color], data)=>
                     tempFilteredData.splice(index, 1);
                 }
             });
-            console.log(newData);
-            console.log(newFilteredData);
-            newFilteredData = [...newFilteredData,newData];
-            console.log(newFilteredData);
+            newFilteredData = [...newFilteredData, ...newData];
+            return [newFilteredData, tempFilteredData];
         }
 
         if(category.jersey == true)
-            filtering('jersey');
+            [newFilteredData, tempFilteredData] = filtering('jersey', [newFilteredData, tempFilteredData]);
         if(category.shoes == true)
-            filtering('shoes');
+            [newFilteredData, tempFilteredData] = filtering('shoes', [newFilteredData, tempFilteredData]);
         if(category.bottoms == true)
-            filtering('bottoms');
+            [newFilteredData, tempFilteredData] = filtering('bottoms', [newFilteredData, tempFilteredData]);
         if(category.acessories == true)
-            filtering('accessories');
+            [newFilteredData, tempFilteredData] = filtering('accessories', [newFilteredData, tempFilteredData]);
         filteredData = newFilteredData;
     }
 

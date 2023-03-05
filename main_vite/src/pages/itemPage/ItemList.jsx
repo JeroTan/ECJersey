@@ -26,7 +26,7 @@ export default ()=>{
     // useRef
     const rf_searchButton = useRef('');
 
-    const ItemContainer = ({title='', navigation='', sizes=[], colors=[], image=''})=>{
+    const ItemContainer = ({title='', navigation='', sizes=[], colors=[], price=0, image=''})=>{
         let stopSize = false;
         let stopColor = false;
 
@@ -77,7 +77,7 @@ export default ()=>{
                         </div>
                     </div>
                     <div className="absolute bottom-0 right-0">
-                        <label className="font-bold font-serif text-sm text-emerald-600">&#8369; 300</label>
+                        <label className="font-bold font-serif text-sm text-emerald-600">&#8369; {price}</label>
                     </div>
                 </div>
             </div>
@@ -92,18 +92,18 @@ export default ()=>{
         <main className="w-10/12 bg-slate-300 text-zinc-800 box-border p-10">
             <section className='w-full flex justify-between mb-10'>
                 <div>
-                    <button className={'p-2 px-3 bg-slate-200 flex flex-row items-center'}><Icon name="filter" size={1} tailwindClassName="fill-zinc-800" /><span>Filter</span></button>
+                    <button className={'p-2 px-3 bg-slate-200 flex flex-row items-center'}><Icon name="filter" size={1} tailwindClass="fill-zinc-800" /><span>Filter</span></button>
                 </div>
                 <div className="flex flex-row gap-2">
                     {
                         sp_viewType == 'window' ? 
-                        <button className={'p-2 px-3 bg-indigo-700 flex flex-row items-center'}><Icon name="window_view" size={1} tailwindClassName="fill-slate-100" /></button> :
-                        <button onClick={()=>{sp_viewTypeSet('window')}} className={'p-2 px-3 bg-slate-200 flex flex-row items-center'}><Icon name="window_view" size={1} tailwindClassName="fill-zinc-800" /></button>
+                        <button className={'p-2 px-3 bg-indigo-700 flex flex-row items-center'}><Icon name="window_view" size={1} tailwindClass="fill-slate-100" /></button> :
+                        <button onClick={()=>{sp_viewTypeSet('window')}} className={'p-2 px-3 bg-slate-200 flex flex-row items-center'}><Icon name="window_view" size={1} tailwindClass="fill-zinc-800" /></button>
                     }
                     {
                         sp_viewType == 'list' ?
-                        <button className={'p-2 px-3 bg-indigo-700 flex flex-row items-center'}><Icon name="list_view" size={1} tailwindClassName="fill-slate-100" /></button> :
-                        <button onClick={()=>{sp_viewTypeSet('list')}} className={'p-2 px-3 bg-slate-200 flex flex-row items-center'}><Icon name="list_view" size={1} tailwindClassName="fill-zinc-800" /></button>
+                        <button className={'p-2 px-3 bg-indigo-700 flex flex-row items-center'}><Icon name="list_view" size={1} tailwindClass="fill-slate-100" /></button> :
+                        <button onClick={()=>{sp_viewTypeSet('list')}} className={'p-2 px-3 bg-slate-200 flex flex-row items-center'}><Icon name="list_view" size={1} tailwindClass="fill-zinc-800" /></button>
                     }
                 </div>
             </section>
@@ -111,7 +111,7 @@ export default ()=>{
                 {
                     itemizer.length > 0 ?
                     itemizer.map(item=>{
-                        return <ItemContainer key={item.ID} title={item.Name} navigation={`item/${item.ID}`} sizes={item.Size} colors={item.Color} image={item.Image}/>
+                        return <ItemContainer key={item.ID} title={item.Name} navigation={`item/${item.ID}`} sizes={item.Size} colors={item.Color} price={item.Price} image={item.Image}/>
                     }) :
                     ''
                 }

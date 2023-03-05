@@ -12,7 +12,8 @@ export default ()=>{
         'bg-gray-500',
         'bg-slate-100',
         'bg-slate-300',
-        'text-slate-100'
+        'text-slate-100',
+        'fill-slate-100'
     ]
 
     return <>
