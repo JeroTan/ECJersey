@@ -144,10 +144,10 @@ export default ()=>{
             <div className="md:flex hidden h-full justify-end">
                 <div className="h-full flex">
                     <div className="h-full flex items-center justify-center px-3 cursor-pointer">
-                        <a>Login</a>
+                        <Link to="/login">Login</Link>
                     </div>
                     <div className="h-full flex items-center justify-center px-3 cursor-pointer">
-                        <a>Register</a>
+                        <Link to="/register">Register</Link>
                     </div>
                 </div>
                 <div className="h-full flex items-center mx-4">
@@ -175,10 +175,10 @@ export default ()=>{
                 <div className="h-20 flex justify-end items-center p-2">
                     <div className="h-full flex text-lg mr-2">
                         <div className="h-full flex items-center justify-center px-3 cursor-pointer">
-                            <a>Login</a>
+                            <Link to="/login">Login</Link>
                         </div>
                         <div className="h-full flex items-center justify-center px-3 cursor-pointer">
-                            <a>Register</a>
+                            <Link to="/register">Register</Link>
                         </div>
                     </div>
                     <ProfilePic size="1.8" height="16" bg="bg-zinc-900"/>

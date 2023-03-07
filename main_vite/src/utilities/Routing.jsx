@@ -5,8 +5,7 @@ import {createBrowserRouter, RouterProvider, useParams} from 'react-router-dom';
 //-- The component pages --//
 import Home from '../pages/Home.jsx';
 import Jersey from '../pages/Jersey.jsx';
-
-
+import Register from '../pages/Register.jsx';
 
 
 const router = createBrowserRouter([
@@ -29,6 +28,14 @@ const router = createBrowserRouter([
     {
         element:<></>,
         path:'/items/:id'
+    },
+    {
+        element:<Register />,
+        path:'/register'
+    },
+    {
+        element:<></>,
+        path:'/login'
     }
 ]);
 

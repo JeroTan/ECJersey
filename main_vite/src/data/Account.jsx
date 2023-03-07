@@ -1,6 +1,6 @@
 import { createContext } from "react"
 import App from '../App.jsx';
-let data = []
+
 /*format
     login: false,
     firstname: 'sample',
@@ -8,11 +8,8 @@ let data = []
     age: 0,
     profile: ''
 */
+export const dt_account = ()=>{
+    return []
+}
 
-export const Gbl_account = createContext(data);
-
-export default ()=><>
-    <Gbl_account.Provider value={data}>
-        <App />
-    </Gbl_account.Provider>
-</>
+export const Gbl_account = createContext(dt_account());

@@ -30,7 +30,10 @@ export default ({name, size=1, tailwindClass=''})=>{
             return <svg xmlns="http://www.w3.org/2000/svg" width={(size*1)+'em'} height={(size*1)+'em'} viewBox="0 0 24 24"><path className={tailwindClass} d="M3 11V3h8v8Zm0 10v-8h8v8Zm10-10V3h8v8Zm0 10v-8h8v8Z"></path></svg>
         break;
         case 'play':
-            return <svg xmlns="http://www.w3.org/2000/svg" width={(size*1)+'em'} hheight={(size*1)+'em'} viewBox="0 0 24 24"><path className={tailwindClass} d="M9.5 9.325v5.35q0 .575.525.875q.525.3 1.025-.05l4.15-2.65q.475-.3.475-.85t-.475-.85L11.05 8.5q-.5-.35-1.025-.05q-.525.3-.525.875ZM12 22q-2.075 0-3.9-.788q-1.825-.787-3.175-2.137q-1.35-1.35-2.137-3.175Q2 14.075 2 12t.788-3.9q.787-1.825 2.137-3.175q1.35-1.35 3.175-2.138Q9.925 2 12 2t3.9.787q1.825.788 3.175 2.138q1.35 1.35 2.137 3.175Q22 9.925 22 12t-.788 3.9q-.787 1.825-2.137 3.175q-1.35 1.35-3.175 2.137Q14.075 22 12 22Z"></path></svg>
+            return <svg xmlns="http://www.w3.org/2000/svg" width={(size*1)+'em'} height={(size*1)+'em'} viewBox="0 0 24 24"><path className={tailwindClass} d="M9.5 9.325v5.35q0 .575.525.875q.525.3 1.025-.05l4.15-2.65q.475-.3.475-.85t-.475-.85L11.05 8.5q-.5-.35-1.025-.05q-.525.3-.525.875ZM12 22q-2.075 0-3.9-.788q-1.825-.787-3.175-2.137q-1.35-1.35-2.137-3.175Q2 14.075 2 12t.788-3.9q.787-1.825 2.137-3.175q1.35-1.35 3.175-2.138Q9.925 2 12 2t3.9.787q1.825.788 3.175 2.138q1.35 1.35 2.137 3.175Q22 9.925 22 12t-.788 3.9q-.787 1.825-2.137 3.175q-1.35 1.35-3.175 2.137Q14.075 22 12 22Z"></path></svg>
+        break;
+        case 'home':
+            return <svg xmlns="http://www.w3.org/2000/svg" width={(size*1)+'em'} height={(size*1)+'em'} viewBox="0 0 24 24"><path className={tailwindClass} d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z"></path></svg>
         break;
         case 'person':
             return <svg xmlns="http://www.w3.org/2000/svg" width={(size*1)+'em'} height={(size*1)+'em'} viewBox="0 0 24 24"><path className={tailwindClass} d="M12 12q-1.65 0-2.825-1.175T8 8q0-1.65 1.175-2.825T12 4q1.65 0 2.825 1.175T16 8q0 1.65-1.175 2.825T12 12Zm-8 8v-2.8q0-.85.438-1.563T5.6 14.55q1.55-.775 3.15-1.163T12 13q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20H4Z"></path></svg>

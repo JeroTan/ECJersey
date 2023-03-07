@@ -63,4 +63,4 @@ export const dt_items = ()=>{
     ]
 }
 
-export const Gbl_items = createContext(dt_items);
+export const Gbl_items = createContext(dt_items());
