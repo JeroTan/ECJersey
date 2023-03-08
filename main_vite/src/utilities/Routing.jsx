@@ -7,6 +7,8 @@ import Home from '../pages/Home.jsx';
 import Jersey from '../pages/Jersey.jsx';
 import Register from '../pages/Register.jsx';
 import Login from '../pages/Login.jsx';
+import Cart from '../pages/cartPage/Cart.jsx';
+import Profile from '../pages/Profile.jsx';
 
 
 const router = createBrowserRouter([
@@ -35,8 +37,16 @@ const router = createBrowserRouter([
         path:'/register'
     },
     {
+        element:<Profile/>,
+        path: '/profile'
+    },
+    {
         element:<Login />,
         path:'/login'
+    },
+    {
+        element:<Cart/>,
+        path:'/cart'
     }
 ]);
 

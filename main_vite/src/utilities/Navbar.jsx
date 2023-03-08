@@ -6,10 +6,12 @@ import Icon from './Icon.jsx';
 import { Gbl_itemSearch } from "../data/Search.jsx";
 import { Gbl_currentPage } from "../data/CurrentPage.jsx";
 import { Gbl_session } from "../data/Session.jsx";
+import { Gbl_cart } from "../data/Cart.jsx";
 
 /// assets
 import logo from '../assets/ec_jersey.jpg';
 import './Navbar.css'
+import { pop_info } from "./Sweetalert.jsx";
 
 const vrt_css = (page)=>{
     let vrt = {
@@ -40,11 +42,13 @@ export default ()=>{
     // useState
     const [sp_dropDown, sp_dropDownSet] = useState(false);
     const [sp_openBurger, sp_openBurgerSet] = useState(false);
+    const [sp_openAccountOption, sp_openAccountOptionSet] = useState(false);
 
     // useContext
     let {sp_search, sp_searchSet}  = useContext(Gbl_itemSearch);
     const {sp_session, sp_sessionSet} = useContext(Gbl_session);
     const { currentPage } = useContext(Gbl_currentPage);
+    const { sp_cart, sp_cartSet } = useContext(Gbl_cart);
 
     // useNavigate
     const navigation = useNavigate();
@@ -94,6 +98,21 @@ export default ()=>{
     const hndl_navigateResetSearch = (link)=>{
         sp_searchSet('');
         navigation(link);
+    }
+    const hndl_logout = ()=>{
+        if(sp_session.Login != false){
+            sp_sessionSet({
+                Login: false,
+                Data:{}
+            })
+            sp_openAccountOptionSet(false);
+            pop_info('success', 'Account has been logged out');
+        }
+    }
+    const hndl_openAccountOption = ()=>{
+        
+        if(sp_session.Login == true)
+            sp_openAccountOptionSet(prev=>!prev);
     }
 
     //// Contents ////
@@ -146,8 +165,13 @@ export default ()=>{
             <div className="md:flex hidden h-full justify-end">
                 <div className="h-full flex">
                     {sp_session.Login == true ?<>
-                        <div className="h-full flex items-center justify-center px-3">
+                        <div className="h-full flex items-center justify-center px-1">
                             <label className="px-3">{`${sp_session.Data.Lastname}, ${sp_session.Data.Firstname}`}</label>
+                        </div>
+                        <div className="h-full flex items-center justify-center px-1 cursor-pointer" onClick={()=>{}}>
+                            <div className="relative after:absolute after:rounded-full after:w-4 after:h-4 after:content-[attr(cartvalue)] after:top-0 after:right-0 after:bg-indigo-700 after:text-xs after:text-center after:translate-y-[-25%] after:translate-x-[25%]" cartvalue={sp_cart.length} >
+                                <Icon name="cart" size="2" tailwindClass="fill-slate-200"/>
+                            </div>
                         </div>
                     </> : <>
                         <div className="h-full flex items-center justify-center px-3 cursor-pointer">
@@ -159,7 +183,7 @@ export default ()=>{
                     
                     </>}
                 </div>
-                <div className="h-full flex items-center mx-4">
+                <div className={`h-full flex items-center mx-4 ${sp_session.Login == true ? 'cursor-pointer':''}`} onClick={()=>{hndl_openAccountOption()}}>
                     <ProfilePic />
                 </div>
             </div>
@@ -168,23 +192,41 @@ export default ()=>{
                     <Icon name="bars" size="2" tailwindClass="fill-slate-200"/>
                 </div>
             </div>
+            {
+                sp_openAccountOption == true ? <>
+                <section className="md:block hidden absolute bottom-0 translate-y-full bg-zinc-900 p-5">
+                    <div className="cursor-pointer hover:text-indigo-500 mb-2" onClick={()=>{ navigation('/profile') }}>
+                        Profile
+                    </div>
+                    <div className="cursor-pointer hover:text-indigo-500" onClick={()=>{ hndl_logout() }}>
+                        Logout
+                    </div>
+                </section>
+                </> :
+                ''
+            }
         </div>
     </header>
 
     {/*Second Header When User clicks the button on small screen*/}
     {sp_openBurger ? (
         <header className={"md:hidden block fixed w-screen h-screen text-slate-200 z-50 tilt-in-right-2"}>
-            <div className="w-screen h-screen bg-zinc-900">
+            <div className="w-screen h-screen bg-zinc-900 p-2">
                 <div className="flex justify-end">
                     <div className="p-2 cursor-pointer" onClick={()=>{sp_openBurgerSet(false)}}>
                         <Icon name="close" size="3" tailwindClass="fill-slate-200"/>
                     </div>
                 </div>
-                <div className="h-20 flex justify-end items-center p-2">
+                <div className="h-20 flex justify-end items-center">
                     <div className="h-full flex text-lg mr-2">
                         { sp_session.Login == true ? <>
                         <div className="h-full flex items-center justify-center px-3">
-                            <label className="px-3">{`${sp_session.Data.Lastname}, ${sp_session.Data.Firstname}`}</label>
+                            <label>{`${sp_session.Data.Lastname}, ${sp_session.Data.Firstname}`}</label>
+                        </div>
+                        <div className="h-full flex items-center justify-center px-1 cursor-pointer" onClick={()=>{}}>
+                            <div className="relative after:absolute after:rounded-full after:w-4 after:h-4 after:content-[attr(cartvalue)] after:top-0 after:right-0 after:bg-indigo-700 after:text-xs after:text-center after:translate-y-[-25%] after:translate-x-[25%]" cartvalue={sp_cart.length} >
+                                <Icon name="cart" size="1.5" tailwindClass="fill-slate-200"/>
+                            </div>
                         </div>
                         </>
                         : <>
@@ -199,7 +241,20 @@ export default ()=>{
                     </div>
                     <ProfilePic size="1.8" height="16" bg="bg-zinc-900"/>
                 </div>
-                <div className="p-3 w-full box-border">
+                {
+                    sp_session.Login == true ? <>
+                    <section className="flex justify-end mb-3 gap-2">
+                        <div className="cursor-pointer hover:text-indigo-500 tracking-wider text-slate-300" onClick={()=>{ navigation('/profile') }}>
+                            PROFILE
+                        </div>
+                        <div className="cursor-pointer hover:text-indigo-500 tracking-wider text-slate-300" onClick={()=>{ hndl_logout() }}>
+                            LOGOUT
+                        </div>
+                    </section>
+                    </> :
+                    ''
+                }
+                <div className="p-1 w-full box-border">
                     <div className="w-full bg-zinc-800 rounded-lg flex flex-col items-center py-5">
                         <Link_navThree name="Home" link="/home" effect={`${links.home}`} />
                         <Link_navThree name="Jersey" link="/jersey" effect={`${links.jersey}`} />
@@ -212,7 +267,15 @@ export default ()=>{
         </header>
         ) : ''
     }
-    
+
+    {/*Option when user have login*/}
+    {sp_openAccountOption == true ? <>
+        <header>
+
+        </header>
+    </> :
+    ''
+    }
     
     <div className="block w-full bg-gray-200 h-20"></div>
     </>

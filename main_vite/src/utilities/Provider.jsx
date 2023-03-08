@@ -6,6 +6,7 @@ import { Gbl_items, dt_items } from "../data/Item";
 import { Gbl_account, dt_account } from "../data/Account";
 import { Gbl_session, dt_session } from "../data/Session";
 import { Gbl_reminder, dt_reminder } from "../data/Reminder";
+import { Gbl_cart, dt_cart } from "../data/Cart";
 
 
 export default (ElementTunnel)=>{
@@ -14,6 +15,7 @@ export default (ElementTunnel)=>{
     const [ sp_account, sp_accountSet ] = useState(dt_account());
     const [ sp_session, sp_sessionSet ] = useState(dt_session());
     const [ sp_reminder, sp_reminderSet] = useState(dt_reminder());
+    const [ sp_cart, sp_cartSet ] = useState(dt_cart());
 
     return <>
         <Gbl_items.Provider value={{sp_items, sp_itemsSet}}>
@@ -21,7 +23,9 @@ export default (ElementTunnel)=>{
         <Gbl_account.Provider value={{sp_account, sp_accountSet}}>
         <Gbl_session.Provider value={{sp_session, sp_sessionSet}}>
         <Gbl_reminder.Provider value={{sp_reminder, sp_reminderSet}}>
+        <Gbl_cart.Provider value={{sp_cart, sp_cartSet}}>
             {ElementTunnel.children}
+        </Gbl_cart.Provider>
         </Gbl_reminder.Provider>
         </Gbl_session.Provider>
         </Gbl_account.Provider>

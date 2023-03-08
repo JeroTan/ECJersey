@@ -319,7 +319,7 @@ export default ()=>{
     </>
 
     return <>
-        <aside className="w-2/12 bg-zinc-900/[0.95] text-slate-200 flex flex-col p-3 pb-20">
+        <aside className="md:w-2/12 w-6/12 md:flex hidden bg-zinc-900/[0.95] text-slate-200 flex-col p-3 pb-20">
             <div className="flex w-full justify-between mb-2">
                 <h4 className="text-xl tracking-wider font-bold">Filter</h4>
                 <div className="md:hidden flex cursor-pointer">
