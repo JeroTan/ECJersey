@@ -5,6 +5,8 @@ import Icon from './Icon.jsx';
 /// data
 import { Gbl_itemSearch } from "../data/Search.jsx";
 import { Gbl_currentPage } from "../data/CurrentPage.jsx";
+import { Gbl_session } from "../data/Session.jsx";
+
 /// assets
 import logo from '../assets/ec_jersey.jpg';
 import './Navbar.css'
@@ -41,10 +43,11 @@ export default ()=>{
 
     // useContext
     let {sp_search, sp_searchSet}  = useContext(Gbl_itemSearch);
+    const {sp_session, sp_sessionSet} = useContext(Gbl_session);
     const { currentPage } = useContext(Gbl_currentPage);
 
     // useNavigate
-    const navigate = useNavigate();
+    const navigation = useNavigate();
 
     // useRef
     const rf_searchButton = useRef('');
@@ -90,9 +93,8 @@ export default ()=>{
     }
     const hndl_navigateResetSearch = (link)=>{
         sp_searchSet('');
-        navigate(link);
+        navigation(link);
     }
-    
 
     //// Contents ////
     let rendering = <>
@@ -100,7 +102,7 @@ export default ()=>{
         {/* Left Side */}
         <div className="flex h-full">
             <div className="sm:mx-5 mx-3 flex items-center">
-                <div className="sm:h-14 h-12 aspect-square rounded-full overflow-hidden bg-zinc-900 cursor-pointer" onClick={()=>useNavigate('/home')}>
+                <div className="sm:h-14 h-12 aspect-square rounded-full overflow-hidden bg-zinc-900 cursor-pointer" onClick={()=>navigation('/home')}>
                     <img className="relative w-full h-full object-cover object-center" src={logo} />
                 </div>
             </div>
@@ -143,12 +145,19 @@ export default ()=>{
         <div className="flex h-full justify-end">
             <div className="md:flex hidden h-full justify-end">
                 <div className="h-full flex">
-                    <div className="h-full flex items-center justify-center px-3 cursor-pointer">
-                        <Link to="/login">Login</Link>
-                    </div>
-                    <div className="h-full flex items-center justify-center px-3 cursor-pointer">
-                        <Link to="/register">Register</Link>
-                    </div>
+                    {sp_session.Login == true ?<>
+                        <div className="h-full flex items-center justify-center px-3">
+                            <label className="px-3">{`${sp_session.Data.Lastname}, ${sp_session.Data.Firstname}`}</label>
+                        </div>
+                    </> : <>
+                        <div className="h-full flex items-center justify-center px-3 cursor-pointer">
+                            <Link to="/login">Login</Link>
+                        </div>
+                        <div className="h-full flex items-center justify-center px-3 cursor-pointer">
+                            <Link to="/register">Register</Link>
+                        </div>
+                    
+                    </>}
                 </div>
                 <div className="h-full flex items-center mx-4">
                     <ProfilePic />
@@ -160,7 +169,6 @@ export default ()=>{
                 </div>
             </div>
         </div>
-
     </header>
 
     {/*Second Header When User clicks the button on small screen*/}
@@ -174,12 +182,20 @@ export default ()=>{
                 </div>
                 <div className="h-20 flex justify-end items-center p-2">
                     <div className="h-full flex text-lg mr-2">
+                        { sp_session.Login == true ? <>
+                        <div className="h-full flex items-center justify-center px-3">
+                            <label className="px-3">{`${sp_session.Data.Lastname}, ${sp_session.Data.Firstname}`}</label>
+                        </div>
+                        </>
+                        : <>
                         <div className="h-full flex items-center justify-center px-3 cursor-pointer">
                             <Link to="/login">Login</Link>
                         </div>
                         <div className="h-full flex items-center justify-center px-3 cursor-pointer">
                             <Link to="/register">Register</Link>
                         </div>
+                        </>
+                        }
                     </div>
                     <ProfilePic size="1.8" height="16" bg="bg-zinc-900"/>
                 </div>
@@ -210,5 +226,4 @@ export default ()=>{
 GAMIT kang useState sa hamburger kase need nya i-call yung 2nd header and dapat sa second header ay may close button na gagamit din ng useState
 
 PERO PERO dapat may locking system, mag nag click yung hamburger gamit kang lock mechanism para di sya maulit in case mag double click
-
 */

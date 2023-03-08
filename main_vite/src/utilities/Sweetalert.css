@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.mybg1{
+    @apply: bg-zinc-700!important;
+}
+.mybg2{
+    background-color: aqua!important;
+}

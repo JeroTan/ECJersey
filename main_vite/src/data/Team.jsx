@@ -1,5 +1,4 @@
 import { createContext } from "react"
-import App from '../App.jsx';
 
 import lg_hawks from'../assets/team/1_Hawks.png';
 import lg_celtics from'../assets/team/2_Celtics.png';

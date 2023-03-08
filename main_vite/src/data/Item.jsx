@@ -1,5 +1,4 @@
 import { createContext } from "react"
-import App from '../App.jsx';
 
 /// Assets
 import image_1 from "../assets/item/1_item.png"
