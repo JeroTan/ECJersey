@@ -119,7 +119,7 @@ export default ()=>{
                     }
                 </div>
             </section>
-            <section className='w-full grid gap-10 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-2 auto-rows-max'>
+            <section className='w-full grid sm:gap-10 gap-5 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-2 auto-rows-max'>
                 {
                     itemizer.length > 0 ?
                     itemizer.map(item=>{

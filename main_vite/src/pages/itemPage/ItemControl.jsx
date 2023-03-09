@@ -16,17 +16,17 @@ export default ()=>{
     let [ sp_itemControl, sp_itemControlSet ] = useContext(Gbl_itemControl);
     let [ sp_openFilter, sp_openFilterSet ] = useContext(Gbl_openFilter);
     let gbl_search = useContext(Gbl_itemSearch);
-    let { currentPage } = useContext(Gbl_currentPage);
+    let { sp_currentPage, sp_currentPageSet } = useContext(Gbl_currentPage);
     let { logo } = useContext(Gbl_teamLogo);
 
     
     // useState
     let [sp_catCheckbox, sp_catCheckboxSet] = useState({
-        allCategory: currentPage == 'home' || currentPage == 'none',
-        jersey: currentPage == 'jersey',
-        shoes: currentPage == 'shoes',
-        bottoms: currentPage == 'bottoms',
-        accessories: currentPage == 'accessories'
+        allCategory: sp_currentPage == 'home' || sp_currentPage == 'none',
+        jersey: sp_currentPage == 'jersey',
+        shoes: sp_currentPage == 'shoes',
+        bottoms: sp_currentPage == 'bottoms',
+        accessories: sp_currentPage == 'accessories'
     });
     let [sp_priceSort, sp_priceSortSet] = useState('MinToMax');
     let [sp_priceRange, sp_priceRangeSet] = useState({
@@ -232,7 +232,7 @@ export default ()=>{
             {checkBox('lg:w-6/12 w-full pb-2', 'rockets', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.rockets)} Rockets</> )}
             {checkBox('lg:w-6/12 w-full pb-2', 'pacers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.pacers)} Pacers</> )}
             {checkBox('lg:w-6/12 w-full pb-2', 'clippers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.clippers)} Clippers</> )}
-            {checkBox('lg:w-6/12 w-full pb-2', 'lakers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.lakers)} Bulls</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'lakers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.lakers)} Lakers</> )}
             {checkBox('lg:w-6/12 w-full pb-2', 'grizzlies', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.grizzlies)} Grizzlies</> )}
 
             {checkBox('lg:w-6/12 w-full pb-2', 'heat', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.heat)} Heat</> )}

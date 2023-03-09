@@ -47,7 +47,8 @@ export default ()=>{
     // useContext
     let {sp_search, sp_searchSet}  = useContext(Gbl_itemSearch);
     const {sp_session, sp_sessionSet} = useContext(Gbl_session);
-    const { currentPage } = useContext(Gbl_currentPage);
+    const { sp_currentPage, sp_currentPageSet } = useContext(Gbl_currentPage);
+
     const { sp_cart, sp_cartSet } = useContext(Gbl_cart);
 
     // useNavigate
@@ -57,7 +58,7 @@ export default ()=>{
     const rf_searchButton = useRef('');
 
     // Logic Ext
-    const {links, bgs} = vrt_css(currentPage);
+    const {links, bgs} = vrt_css(sp_currentPage);
 
     const ProfilePic = ({size=1.4, height=12, bg="bg-zinc-900"})=>{
         return <>
@@ -134,7 +135,7 @@ export default ()=>{
             </div>
             <div className="xl:hidden md:flex hidden h-full relative">
                 <div className="h-full flex items-center justify-center cursor-pointer px-5 hover:bg-zinc-900 ease-out duration-100" onClick={()=> sp_dropDownSet(!sp_dropDown)}>
-                    <div>{currentPage.charAt(0).toUpperCase() + currentPage.slice(1)}</div>
+                    <div>{sp_currentPage.charAt(0).toUpperCase() + sp_currentPage.slice(1)}</div>
                     <div><Icon name={sp_dropDown?'up':'down'} size="2" tailwindClass="fill-slate-200"/></div>
                 </div>
                 {sp_dropDown ? (

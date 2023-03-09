@@ -130,30 +130,31 @@ export const ItemGetter = ([search, category, price, team, size, color], data)=>
     team = recalibrateArray(team);
     if(!team.allTeam){
         let newFilteredData = [];
-        let tempFilteredData = filteredData;
+        let tempFilteredData = recalibrateArray(filteredData);
         
         Object.keys(team).map((item)=>{
             if(item == 'x76ers'){
-                if(team[item]== true){
-                    newFilteredData = [...newFilteredData ,...( filteredData.filter(item2=>{ return item2.Team.toLowerCase().includes('76ers') }) ) ];
+                if(team[item]){
+                    newFilteredData = [...newFilteredData, ...( tempFilteredData.filter(item2=>{ return item2.Team.toLowerCase().includes('76ers') }) ) ];
                 }
             }else if(item == 'trailblazers'){
-                if(team[item] == true){
-                    newFilteredData = [...newFilteredData ,...( filteredData.filter(item2=>{ return item2.Team.toLowerCase().includes('Trail Blazer') }) ) ];
+                if(team[item]){
+                    newFilteredData = [...newFilteredData, ...( tempFilteredData.filter(item2=>{ return item2.Team.toLowerCase().includes('Trail Blazer') }) ) ];
                 }
             }
             else{
-                if(team[item] == true){
-                    newFilteredData = [...newFilteredData ,...( filteredData.filter(item2=>{ return item2.Team.toLowerCase().includes(item) }) ) ];
-                    newFilteredData.forEach(item => {
-                        const index = filteredData.findIndex(element=>element.id == item.id);
-                        if(index > -1){
-                            filteredData.splice(index, 1);
-                        }
-                    });
+                if(team[item]){
+                    newFilteredData = [...newFilteredData, ...( tempFilteredData.filter(item2=>{ return item2.Team.toLowerCase().includes(item) }) ) ];
                 }
-                    
             }
+            newFilteredData.forEach(item => {
+                if(tempFilteredData.length < 1) return false;
+
+                let index = tempFilteredData.findIndex(element=>element.ID == item.ID);
+                if(index > -1){
+                    tempFilteredData.splice(index, 1);
+                }
+            });
         });
 
         filteredData = newFilteredData;
