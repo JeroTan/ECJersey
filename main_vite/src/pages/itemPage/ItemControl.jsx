@@ -139,9 +139,12 @@ export default ()=>{
             })
             temp.allCategory = true;
         }
-        else
+        else{
             temp = { ...sp_catCheckbox, [id]: checked, allCategory:false }
-        
+            if( Object.keys( temp ).every(key=>temp[key] == false) )
+                temp = {...temp, allCategory:true }
+        }
+            
         sp_catCheckboxSet(temp);
         sp_itemControlSet((prevsp_itemControl)=> ({...prevsp_itemControl, category:temp}) ); 
     };
@@ -207,8 +210,11 @@ export default ()=>{
             })
             temp.allTeam = true;
         }
-        else
+        else{
             temp = { ...sp_teamCheckbox, [id]: checked , allTeam:false};
+            if( Object.keys( temp ).every(key=>temp[key] == false) )
+                temp = {...temp, allTeam:true }
+        }
         
         sp_teamCheckboxSet(temp);
         sp_itemControlSet((prevsp_itemControl)=> ({...prevsp_itemControl, team:temp}) );
@@ -268,6 +274,8 @@ export default ()=>{
         }
         else{
             temp = { ...sp_sizesCheckbox, [id]: checked , allSizes:false}
+            if( Object.keys( temp ).every(key=>temp[key] == false) )
+                temp = {...temp, allSizes:true }
         }
         sp_sizesCheckboxSet(temp);
         sp_itemControlSet((prevsp_itemControl)=> ({...prevsp_itemControl, size:temp}) );
@@ -301,6 +309,8 @@ export default ()=>{
         }
         else{
             temp = { ...sp_colorsCheckbox, [id]: checked , allColors:false};
+            if( Object.keys( temp ).every(key=>temp[key] == false) )
+                temp = {...temp, allColors:true }
         }
         sp_colorsCheckboxSet(temp);
         sp_itemControlSet((prevsp_itemControl)=> ({...prevsp_itemControl, color:temp}) );

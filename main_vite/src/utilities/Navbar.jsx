@@ -152,7 +152,7 @@ export default ()=>{
             </div>
             <div className="h-full flex items-center sm:mx-3 mx-0">
                 <div className="flex">
-                    <input type="text" className="h-8 lg:w-96 md:w-64 sm:w-96 bg-zinc-900 focus:outline outline-2 text-slate-100 px-2 outline-indigo-700" ref={rf_searchButton}/>
+                    <input type="text" className="h-8 lg:w-96 md:w-64 sm:w-96 bg-zinc-900 focus:outline outline-2 text-slate-100 px-2 outline-indigo-700" ref={rf_searchButton} onKeyDown={(event)=>{event.key=='Enter' ? hndl_searchButton() : '' }}/>
                 </div>
                 <div className="flex">
                     <button className="h-8 w-12 bg-indigo-700 flex justify-center items-center" onClick={hndl_searchButton}>

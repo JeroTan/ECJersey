@@ -160,17 +160,21 @@ export const ItemGetter = ([search, category, price, team, size, color], data)=>
         filteredData = newFilteredData;
     }
 
-    /*
+    
     // Filter by Size
+    size = recalibrateArray(size);
     if(!size.allSizes){
         let newFilteredData = [];
+        let tempFilteredData = recalibrateArray(filteredData);
 
         const minimizeTransition = (size, altName = '')=>{
-            newFilteredData = [...newFilteredData ,...( filteredData.filter(item=>{ return item.Size.join(' ').toLowerCase().includes(altName == false ? size : altName) }) ) ];
+            newFilteredData = [...newFilteredData ,...( tempFilteredData.filter(item=>{ return item.Size.join(' ').toLowerCase().includes(altName == false ? size : altName) }) ) ];
             newFilteredData.forEach(item => {
-                const index = filteredData.findIndex(element=>element.id == item.id);
+                if(tempFilteredData.length < 1) return false;
+
+                let index = tempFilteredData.findIndex(element=>element.ID == item.ID);
                 if(index > -1){
-                    filteredData.splice(index, 1);
+                    tempFilteredData.splice(index, 1);
                 }
             });
         }
@@ -178,26 +182,26 @@ export const ItemGetter = ([search, category, price, team, size, color], data)=>
         Object.keys(size).map((item)=>{
             if(item == 'x2sm'){
                 if(size[item]== true){
-                    minimizeTransition(size, '2xsm');
+                    minimizeTransition(item, '2xsm');
                 }
             }else if(item == 'x2l'){
                 if(size[item] == true){
-                    minimizeTransition(size, '2xl');
+                    minimizeTransition(item, '2xl');
                 }
             }
             else if(item == 'x3l'){
                 if(size[item] == true){
-                    minimizeTransition(size, '3xl');
+                    minimizeTransition(item, '3xl');
                 }
             }
             else if(item == 'x4l'){
                 if(size[item] == true){
-                    minimizeTransition(size, '4xl');
+                    minimizeTransition(item, '4xl');
                 }
             }
             else{
                 if(size[item] == true){
-                    minimizeTransition(size);
+                    minimizeTransition(item);
                 }
             }
         });
@@ -205,18 +209,22 @@ export const ItemGetter = ([search, category, price, team, size, color], data)=>
         filteredData = newFilteredData;
     }
 
+    
     //Filter by Color
+    color = recalibrateArray(color)
     if(!color.allColors){
         let newFilteredData = [];
+        let tempFilteredData = recalibrateArray(filteredData);
 
         Object.keys(color).map((item)=>{
             if(color[item] == true){
-
-                newFilteredData = [...newFilteredData, ...( filteredData.filter(item2=>{ return item2.color.join(' ').toLowerCase().includes(item) }) ) ];
+                newFilteredData = [...newFilteredData, ...( tempFilteredData.filter(item2=>{ return item2.Color.join(' ').toLowerCase().includes(item) }) ) ];
                 newFilteredData.forEach(item2 => {
-                    const index = filteredData.findIndex(element=>element.id == item2.id);
+                    if(tempFilteredData.length < 1) return false;
+
+                    let index = tempFilteredData.findIndex(element=>element.ID == item2.ID);
                     if(index > -1){
-                        filteredData.splice(index, 1);
+                        tempFilteredData.splice(index, 1);
                     }
                 });
 
@@ -224,7 +232,7 @@ export const ItemGetter = ([search, category, price, team, size, color], data)=>
         });
 
         filteredData = newFilteredData;
-    }
+    }/*
     */
 
     //console.log(filteredData);
