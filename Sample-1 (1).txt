@@ -6,7 +6,7 @@
         Team: "Bulls",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['red'],
-        Image: 1_Bape Bulls.jpg,
+        Image: 1_image.jpg,
 },
 {
         ID: 2,
@@ -16,7 +16,7 @@
         Team: "Lakers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['yellow'],
-        Image: 2_Bape Lakers.jpg,
+        Image: 2_image.jpg,
 },
 {
         ID: 3,
@@ -26,7 +26,7 @@
         Team: "Celtics",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['green'],
-        Image: 3_Bird Green away.jpg,
+        Image: 3_image.jpg,
 },
 {
         ID: 4,
@@ -36,7 +36,7 @@
         Team: "Raptors",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['violet'],
-        Image: 4_Carter violet.jpg,
+        Image: 4_image.jpg,
 },
 {
         ID: 5,
@@ -46,7 +46,7 @@
         Team: "Raptors",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 5_Carter white.jpg,
+        Image: 5_image.jpg,
 },
 {
         ID: 6,
@@ -56,7 +56,7 @@
         Team: "Warriors",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 6_Curry 2023 City edition.jpg,
+        Image: 6_image.jpg,
 },
 {
         ID: 7,
@@ -66,7 +66,7 @@
         Team: "Warriors",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['gray'],
-        Image: 7_Curry AllStar.jpg,
+        Image: 7_image.jpg,
 },
 {
         ID: 8,
@@ -76,7 +76,7 @@
         Team: "Warriors",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 8_Curry City edition (black).jpg,
+        Image: 8_image.jpg,
 },
 {
         ID: 9,
@@ -86,7 +86,7 @@
         Team: "Warriors",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 9_Curry home white.jpg,
+        Image: 9_image.jpg,
 },
 {
         ID: 10,
@@ -96,7 +96,7 @@
         Team: "Mavericks",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 10_Doncic 2023 City Edition.jpg,
+        Image: 10_image.jpg,
 },
 {
         ID: 11,
@@ -106,7 +106,7 @@
         Team: "Bulls",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 11_Drose Black.jpg,
+        Image: 11_image.jpg,
 },
 {
         ID: 12,
@@ -116,7 +116,7 @@
         Team: "Bulls",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['red'],
-        Image: 12_DRose Red.jpg,
+        Image: 12_image.jpg,
 },
 {
         ID: 13,
@@ -126,7 +126,7 @@
         Team: "Mavericks",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 13_DRose White.jpg,
+        Image: 13_image.jpg,
 },
 {
         ID: 14,
@@ -136,7 +136,7 @@
         Team: "Spurs",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 14_Duncan 1999 black champ.jpg,
+        Image: 14_image.jpg,
 },
 {
         ID: 15,
@@ -146,7 +146,7 @@
         Team: "Spurs",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 15_Duncan 1999 white champ.jpg,
+        Image: 15_image.jpg,
 },
 {
         ID: 16,
@@ -156,7 +156,7 @@
         Team: "Nets",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 16_Durant City edition.jpg,
+        Image: 16_image.jpg,
 },
 {
         ID: 17,
@@ -166,7 +166,7 @@
         Team: "Sonics",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['green'],
-        Image: 17_Durant Seattle.jpg,
+        Image: 17_image.jpg,
 },
 {
         ID: 18,
@@ -176,7 +176,7 @@
         Team: "Sonics",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 18_Durant Sonics.jpg,
+        Image: 18_image.jpg,
 },
 {
         ID: 19,
@@ -186,7 +186,7 @@
         Team: "Wolves",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 19_Edwards 2022 City Edition.jpg,
+        Image: 19_image.jpg,
 },
 {
         ID: 20,
@@ -196,7 +196,7 @@
         Team: "Bucks",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 20_GA34 2022 City Edition.jpg,
+        Image: 20_image.jpg,
 },
 {
         ID: 21,
@@ -206,7 +206,7 @@
         Team: "Bucks",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 21_GA34 2023 City Edition.jpg,
+        Image: 21_image.jpg,
 },
 {
         ID: 22,
@@ -216,7 +216,7 @@
         Team: "Bucks",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['violet'],
-        Image: 20_GA34 2023 Classic Edition.jpg,
+        Image: 22_image.jpg,
 },
 {
         ID: 23,
@@ -226,7 +226,7 @@
         Team: "Spurs",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 23_Ginobili Black.jpg,
+        Image: 23_image.jpg,
 },
 {
         ID: 24,
@@ -236,7 +236,7 @@
         Team: "Magic",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 24_Hardaway Black stripes.jpg,
+        Image: 24_image.jpg,
 },
 {
         ID: 25,
@@ -246,7 +246,7 @@
         Team: "Magic",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 25_Hardaway Blue stripes.jpg,
+        Image: 25_image.jpg,
 },
 {
         ID: 26,
@@ -256,7 +256,7 @@
         Team: "Sixers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 26_Harden Sixers City edition.jpg,
+        Image: 26_image.jpg,
 },
 {
         ID: 27,
@@ -266,7 +266,7 @@
         Team: "Heat",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 27_Herro 2022 City Edition.jpg,
+        Image: 27_image.jpg,
 },
 {
         ID: 28,
@@ -276,7 +276,7 @@
         Team: "Pistons",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue green'],
-        Image: 28_Hill Blue-Green.jpg,
+        Image: 28_image.jpg,
 },
 {
         ID: 29,
@@ -286,7 +286,7 @@
         Team: "Sixers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 29_Iverson phila blue.jpg,
+        Image: 29_image.jpg,
 },
 {
         ID: 30,
@@ -296,7 +296,7 @@
         Team: "Sixers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 29_Iverson Sixers black.jpg,
+        Image: 30_image.jpg,
 },
 {
         ID: 31,
@@ -306,7 +306,7 @@
         Team: "Sixers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 31_Iverson Sixers white.jpg,
+        Image: 31_image.jpg,
 },
 {
         ID: 32,
@@ -316,7 +316,7 @@
         Team: "Rockets",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 32_Jalen Green City Edition.jpg,
+        Image: 32_image.jpg,
 },
 {
         ID: 33,
@@ -326,7 +326,7 @@
         Team: "Bulls",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 33_Jordan black chicago.jpg,
+        Image: 33_image.jpg,
 },
 {
         ID: 34,
@@ -336,7 +336,7 @@
         Team: "Bulls",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 34_Jordan Chicago Black.jpg,
+        Image: 34_image.jpg,
 },
 {
         ID: 35,
@@ -346,7 +346,7 @@
         Team: "Bulls",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['gold'],
-        Image: 35_Jordan gold.jpg,
+        Image: 35_image.jpg,
 },
 {
         ID: 36,
@@ -356,7 +356,7 @@
         Team: "North Carolina",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 36_Jordan North Carolina.jpg,
+        Image: 36_image.jpg,
 },
 {
         ID: 37,
@@ -366,7 +366,7 @@
         Team: "Bulls",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['red'],
-        Image: 37_Jordan Red champ.jpg,
+        Image: 37_image.jpg,
 },
 {
         ID: 38,
@@ -376,7 +376,7 @@
         Team: "Tune Squad",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 38_Jordan TuneSquad.jpg,
+        Image: 38_image.jpg,
 },
 {
         ID: 39,
@@ -386,7 +386,7 @@
         Team: "Bulls",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 35_Jordan White champ.jpg,
+        Image: 39_image.jpg,
 },
 {
         ID: 40,
@@ -396,7 +396,7 @@
         Team: "Sonics",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['green'],
-        Image: 40_Kemp Sonics.jpg,
+        Image: 40_image.jpg,
 },
 {
         ID: 41,
@@ -406,7 +406,7 @@
         Team: "Lakers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['yellow'],
-        Image: 41_Kobe 60th.jpg,
+        Image: 41_image.jpg,
 },
 {
         ID: 42,
@@ -416,7 +416,7 @@
         Team: "Lakers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 42_Kobe Black.jpg,
+        Image: 42_image.jpg,
 },
 {
         ID: 43,
@@ -426,7 +426,7 @@
         Team: "Lakers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['yellow'],
-        Image: 43_Kobe Gold.jpg,
+        Image: 43_image.jpg,
 },
 {
         ID: 44,
@@ -436,7 +436,7 @@
         Team: "Lower Merion",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['red'],
-        Image: 44_Kobe Lower Merion Red.jpg,
+        Image: 44_image.jpg,
 },
 {
         ID: 45,
@@ -446,7 +446,7 @@
         Team: "Lower Merion",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 45_Kobe Lower Merion White.jpg,
+        Image: 45_image.jpg,
 },
 {
         ID: 46,
@@ -456,7 +456,7 @@
         Team: "Lakers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['yellow'],
-        Image: 46_Kobe new 60th.jpg,
+        Image: 46_image.jpg,
 },
 {
         ID: 47,
@@ -466,7 +466,7 @@
         Team: "Lakers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['violet'],
-        Image: 47_Kobe Purple.jpg,
+        Image: 47_image.jpg,
 },
 {
         ID: 48,
@@ -476,7 +476,7 @@
         Team: "Nets",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 48_Kyrie City editioin 2022.jpg,
+        Image: 48_image.jpg,
 },
 {
         ID: 49,
@@ -486,7 +486,7 @@
         Team: "Hornets",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 49_LaMelo away.jpg,
+        Image: 49_image.jpg,
 },
 {
         ID: 50,
@@ -496,7 +496,7 @@
         Team: "Hornets",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 49_LaMelo Ball City Edition.jpg,
+        Image: 50_image.jpg,
 },
 {
         ID: 51,
@@ -506,7 +506,7 @@
         Team: "Lakers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 51_LBJ 2023 City edition.jpg,
+        Image: 51_image.jpg,
 },
 {
         ID: 52,
@@ -516,7 +516,7 @@
         Team: "Lakers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 52_LBJ Black Mamba.jpg,
+        Image: 52_image.jpg,
 },
 {
         ID: 53,
@@ -526,7 +526,7 @@
         Team: "Lakers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['yellow'],
-        Image: 53_LBJ Yellow.jpg,
+        Image: 53_image.jpg,
 },
 {
         ID: 54,
@@ -536,7 +536,7 @@
         Team: "Cavaliers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 54_LeBron Cavs Navy.jpg,
+        Image: 54_image.jpg,
 },
 {
         ID: 55,
@@ -546,7 +546,7 @@
         Team: "Cavaliers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['red'],
-        Image: 54_LeBron Rookie RED.jpg,
+        Image: 55_image.jpg,
 },
 {
         ID: 56,
@@ -556,7 +556,7 @@
         Team: "Clippers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 56_Leonard 2023 City Edition.jpg,
+        Image: 56_image.jpg,
 },
 {
         ID: 57,
@@ -566,7 +566,7 @@
         Team: "Raptors",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 57_Leonard Raptors white.jpg,
+        Image: 57_image.jpg,
 },
 {
         ID: 58,
@@ -576,7 +576,7 @@
         Team: "Trail Blazers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 58_Lillard City Edition.jpg,
+        Image: 58_image.jpg,
 },
 {
         ID: 59,
@@ -586,7 +586,7 @@
         Team: "Lakers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['yellow'],
-        Image: 59_Magic Yellow home.jpg,
+        Image: 59_image.jpg,
 },
 {
         ID: 60,
@@ -596,7 +596,7 @@
         Team: "Grizzlies",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 60_Morant 2022 City edition.jpg,
+        Image: 60_image.jpg,
 },
 {
         ID: 61,
@@ -606,7 +606,7 @@
         Team: "Grizzlies",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['red'],
-        Image: 61_Morant AllStar.jpg,
+        Image: 61_image.jpg,
 },
 {
         ID: 62,
@@ -616,7 +616,7 @@
         Team: "Grizzlies",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue green'],
-        Image: 62_Morant Classic Grizz Blue-Green.jpg,
+        Image: 62_image.jpg,
 },
 {
         ID: 63,
@@ -626,7 +626,7 @@
         Team: "Grizzlies",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 60_Morant Classic White.jpg,
+        Image: 63_image.jpg,
 },
 {
         ID: 64,
@@ -636,7 +636,7 @@
         Team: "Murray State",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 64_Morant college navy blue.jpg,
+        Image: 64_image.jpg,
 },
 {
         ID: 65,
@@ -646,7 +646,7 @@
         Team: "Murray State",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 65_Morant college white.jpg,
+        Image: 65_image.jpg,
 },
 {
         ID: 66,
@@ -656,7 +656,7 @@
         Team: "Grizzlies",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['gold'],
-        Image: 66_Morant gold.jpg,
+        Image: 66_image.jpg,
 },
 {
         ID: 67,
@@ -666,7 +666,7 @@
         Team: "Grizzlies",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 67_Morant light blue.jpg,
+        Image: 67_image.jpg,
 },
 {
         ID: 68,
@@ -676,7 +676,7 @@
         Team: "Grizzlies",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 68_Morant White home.jpg,
+        Image: 68_image.jpg,
 },
 {
         ID: 69,
@@ -686,7 +686,7 @@
         Team: "Bulls",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 69_Pippen black.jpg,
+        Image: 69_image.jpg,
 },
 {
         ID: 70,
@@ -696,7 +696,7 @@
         Team: "Bulls",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['red'],
-        Image: 70_Pippen red.jpg,
+        Image: 70_image.jpg,
 },
 {
         ID: 71,
@@ -706,7 +706,7 @@
         Team: "Bulls",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 71_Pippen white.jpg,
+        Image: 71_image.jpg,
 },
 {
         ID: 72,
@@ -716,7 +716,7 @@
         Team: "Warriors",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 72_Poole black.jpg,
+        Image: 72_image.jpg,
 },
 {
         ID: 73,
@@ -726,7 +726,7 @@
         Team: "Warriors",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 73_Poole blue.jpg,
+        Image: 73_image.jpg,
 },
 {
         ID: 74,
@@ -736,7 +736,7 @@
         Team: "Pacers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 73_Reggie Miller navy blue.jpg,
+        Image: 74_image.jpg,
 },
 {
         ID: 75,
@@ -746,7 +746,7 @@
         Team: "Bulls",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 75_Rodman Bulls Black.jpg,
+        Image: 75_image.jpg,
 },
 {
         ID: 76,
@@ -756,7 +756,7 @@
         Team: "Lakers",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['yellow'],
-        Image: 76_Rodman Lakers.jpg,
+        Image: 76_image.jpg,
 },
 {
         ID: 77,
@@ -766,7 +766,7 @@
         Team: "Bulls",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['red'],
-        Image: 77_Rodman Red champ.jpg,
+        Image: 77_image.jpg,
 },
 {
         ID: 78,
@@ -776,7 +776,7 @@
         Team: "Bulls",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['white'],
-        Image: 78_Rodman White champ.jpg,
+        Image: 78_image.jpg,
 },
 {
         ID: 79,
@@ -786,7 +786,7 @@
         Team: "Celtics",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['green'],
-        Image: 79_Tatum City edition.jpg,
+        Image: 79_image.jpg,
 },
 {
         ID: 80,
@@ -796,7 +796,7 @@
         Team: "Celtics",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 80_Tatum Statement Black.jpg,
+        Image: 80_image.jpg,
 },
 {
         ID: 81,
@@ -806,7 +806,7 @@
         Team: "Warriors",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['black'],
-        Image: 80_Thompson City edition (black).jpg,
+        Image: 81_image.jpg,
 },
 {
         ID: 82,
@@ -816,7 +816,7 @@
         Team: "Warriors",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['blue'],
-        Image: 82_Thompson City edition (blue).jpg,
+        Image: 82_image.jpg,
 },
 {
         ID: 83,
@@ -826,7 +826,7 @@
         Team: "Hawks",
         Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
         Color: ['yellow'],
-        Image: 83_Young City edition.jpg,
+        Image: 83_image.jpg,
 },
 
 

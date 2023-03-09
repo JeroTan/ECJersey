@@ -105,34 +105,32 @@ export const ItemGetter = ([search, category, price, team, size, color], data)=>
         filteredData = newFilteredData;
     }
 
-    /*
     // Filter By Price
-    switch(price.sort){
-        case 'MinToMax':
-            filteredData = filteredData.sort( (a, b)=> a.Price - b.Price );
-        break;
-        case 'MaxToMin':
-            filteredData = filteredData.sort( (a, b)=> b.Price - a.Price );
-        break;
+    price = recalibrateArray(price);
+    if( price.sort == 'MaxToMin'){
+        filteredData = filteredData.sort( (a, b)=> b.Price - a.Price );
     }
+    else{
+        filteredData = filteredData.sort( (a, b)=> a.Price - b.Price );
+    }
+    price.range = recalibrateArray(price.range);
     if(price.range.min || price.range.max){
-        filteredData = looperOfItems(filteredData, (toCheck)=>{
+        filteredData = filteredData.filter((item, index)=>{
             let checkValid = true;
-            let num = Number(toCheck);
-            if(!(!price.range.min || price.range.min <= num))
+            if(!(!price.range.min || price.range.min <= item.Price))
                 checkValid = false;
-            if(!(!price.range.max || price.range.max >= num))
+            if(!(!price.range.max || price.range.max >= item.Price))
                 checkValid = false;
-            
-            return Number(toCheck);
-        }, 'Price' );
+            return checkValid;
+        });
     }
 
+    
     // Filter by team
+    team = recalibrateArray(team);
     if(!team.allTeam){
         let newFilteredData = [];
         let tempFilteredData = filteredData;
-
         
         Object.keys(team).map((item)=>{
             if(item == 'x76ers'){
@@ -161,7 +159,7 @@ export const ItemGetter = ([search, category, price, team, size, color], data)=>
         filteredData = newFilteredData;
     }
 
-    
+    /*
     // Filter by Size
     if(!size.allSizes){
         let newFilteredData = [];

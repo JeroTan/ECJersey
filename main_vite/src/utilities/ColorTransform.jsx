@@ -27,13 +27,13 @@ export const ColorTransform = (color="")=>{
             return 'pink-500';
         break;
         case 'black':
-            return 'gray-500';
+            return 'gray-900';
         break;
         case 'white':
-            return 'slate-100';
+            return 'slate-50';
         break;
-        case 'neutral':
-            return 'slate-300';
+        case 'gray':
+            return 'slate-400';
         break;
     }
 }

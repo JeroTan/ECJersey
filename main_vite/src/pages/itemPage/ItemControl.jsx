@@ -1,20 +1,24 @@
 import { useContext, useState, useEffect } from "react"
 /// page
-import { Gbl_itemControl } from "./ItemCatalog";
+import { Gbl_itemControl, Gbl_openFilter } from "./ItemCatalog";
 import { Gbl_itemSearch } from "../../data/Search";
 import { Gbl_currentPage } from "../../data/CurrentPage";
 import { Gbl_teamLogo } from "../../data/Team";
 /// utilites
 import Icon from '../../utilities/Icon';
+/// assets
+import './ItemControl.css';
 
 //if( dt_itemCat.hasOwnProperty("") )  GONNA USE LATER
 
 export default ()=>{
     // useContext
     let [ sp_itemControl, sp_itemControlSet ] = useContext(Gbl_itemControl);
+    let [ sp_openFilter, sp_openFilterSet ] = useContext(Gbl_openFilter);
     let gbl_search = useContext(Gbl_itemSearch);
     let { currentPage } = useContext(Gbl_currentPage);
     let { logo } = useContext(Gbl_teamLogo);
+
     
     // useState
     let [sp_catCheckbox, sp_catCheckboxSet] = useState({
@@ -180,7 +184,7 @@ export default ()=>{
             </div>
             <div className="flex flex-col text-sm">
                 <label className="pb-1">Price Range: </label>
-                <div className="flex flex-row justify-between">
+                <div className="flex flex-row md:justify-between justify-start">
                     <div>
                         <input id="min" type="number" className="w-full bg-zinc-900 p-1" min="0" placeholder="Min" onInput={hndl_priceRange} value={sp_priceRange.min}/>
                     </div>
@@ -212,43 +216,43 @@ export default ()=>{
     controlUI.teams = <>
         <h4 className="font-bold text-indigo-100">Teams</h4>
         <div className="ml-2 flex flex-wrap">
-            {checkBox('w-6/12 pb-2', 'allTeam', sp_teamCheckbox, hndl_teamCheckbox, <span>All</span>)}
-            {checkBox('w-6/12 pb-2', 'hawks', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.hawks)} Hawks</> )}
-            {checkBox('w-6/12 pb-2', 'celtics', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.celtics)} Celtics</> )}
-            {checkBox('w-6/12 pb-2', 'nets', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.nets)} Nets</> )}
-            {checkBox('w-6/12 pb-2', 'hornets', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.hornets)} Hornets</> )}
-            {checkBox('w-6/12 pb-2', 'bulls', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.bulls)} Bulls</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'allTeam', sp_teamCheckbox, hndl_teamCheckbox, <span>All</span>)}
+            {checkBox('lg:w-6/12 w-full pb-2', 'hawks', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.hawks)} Hawks</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'celtics', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.celtics)} Celtics</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'nets', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.nets)} Nets</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'hornets', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.hornets)} Hornets</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'bulls', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.bulls)} Bulls</> )}
 
-            {checkBox('w-6/12 pb-2', 'cavaliers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.cavaliers)} Cavaliers</> )}
-            {checkBox('w-6/12 pb-2', 'mavericks', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.mavericks)} Mavericks</> )}
-            {checkBox('w-6/12 pb-2', 'nuggets', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.nuggets)} Nuggets</> )}
-            {checkBox('w-6/12 pb-2', 'pistons', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.pistons)} Pistons</> )}
-            {checkBox('w-6/12 pb-2', 'warriors', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.warriors)} Warriors</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'cavaliers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.cavaliers)} Cavaliers</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'mavericks', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.mavericks)} Mavericks</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'nuggets', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.nuggets)} Nuggets</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'pistons', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.pistons)} Pistons</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'warriors', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.warriors)} Warriors</> )}
 
-            {checkBox('w-6/12 pb-2', 'rockets', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.rockets)} Rockets</> )}
-            {checkBox('w-6/12 pb-2', 'pacers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.pacers)} Pacers</> )}
-            {checkBox('w-6/12 pb-2', 'clippers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.clippers)} Clippers</> )}
-            {checkBox('w-6/12 pb-2', 'lakers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.lakers)} Bulls</> )}
-            {checkBox('w-6/12 pb-2', 'grizzlies', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.grizzlies)} Grizzlies</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'rockets', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.rockets)} Rockets</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'pacers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.pacers)} Pacers</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'clippers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.clippers)} Clippers</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'lakers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.lakers)} Bulls</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'grizzlies', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.grizzlies)} Grizzlies</> )}
 
-            {checkBox('w-6/12 pb-2', 'heat', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.heat)} Heat</> )}
-            {checkBox('w-6/12 pb-2', 'bucks', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.bucks)} Bucks</> )}
-            {checkBox('w-6/12 pb-2', 'timberwolves', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.timbrwolves)} Timberwolves</> )}
-            {checkBox('w-6/12 pb-2', 'pelicans', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.pelicans)} Pelicans</> )}
-            {checkBox('w-6/12 pb-2', 'knicks', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.knicks)} Knicks</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'heat', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.heat)} Heat</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'bucks', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.bucks)} Bucks</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'timberwolves', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.timbrwolves)} Timberwolves</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'pelicans', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.pelicans)} Pelicans</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'knicks', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.knicks)} Knicks</> )}
 
-            {checkBox('w-6/12 pb-2', 'thunder', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.thunder)} Thunder</> )}
-            {checkBox('w-6/12 pb-2', 'magic', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.magic)} Magic</> )}
-            {checkBox('w-6/12 pb-2', 'x76ers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.x76ers)} 76ers</> )}
-            {checkBox('w-6/12 pb-2', 'suns', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.suns)} suns</> )}
-            {checkBox('w-6/12 pb-2', 'trailblazers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.trailblazers)} Trail Blazers</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'thunder', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.thunder)} Thunder</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'magic', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.magic)} Magic</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'x76ers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.x76ers)} 76ers</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'suns', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.suns)} suns</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'trailblazers', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.trailblazers)} Trail Blazers</> )}
 
-            {checkBox('w-6/12 pb-2', 'kings', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.kings)} Kings</> )}
-            {checkBox('w-6/12 pb-2', 'spurs', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.spurs)} Spurs</> )}
-            {checkBox('w-6/12 pb-2', 'raptors', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.raptors)} Raptors</> )}
-            {checkBox('w-6/12 pb-2', 'jazz', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.jazz)}Jazz</> )}
-            {checkBox('w-6/12 pb-2', 'wizards', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.wizards)} Wizards</> )}
-            {checkBox('w-6/12 pb-2', 'custom', sp_teamCheckbox, hndl_teamCheckbox )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'kings', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.kings)} Kings</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'spurs', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.spurs)} Spurs</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'raptors', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.raptors)} Raptors</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'jazz', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.jazz)}Jazz</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'wizards', sp_teamCheckbox, hndl_teamCheckbox, <>{imageInline(logo.wizards)} Wizards</> )}
+            {checkBox('lg:w-6/12 w-full pb-2', 'custom', sp_teamCheckbox, hndl_teamCheckbox )}
         </div>
     </>
 
@@ -313,18 +317,19 @@ export default ()=>{
             {checkBox('w-4/12 pb-1', 'violet', sp_colorsCheckbox, hndl_colorsCheckbox, colorInline('purple-500'))}
             {checkBox('w-4/12 pb-1', 'brown', sp_colorsCheckbox, hndl_colorsCheckbox, colorInline('amber-800'))}
             {checkBox('w-4/12 pb-1', 'pink', sp_colorsCheckbox, hndl_colorsCheckbox, colorInline('pink-500'))}
-            {checkBox('w-4/12 pb-1', 'black', sp_colorsCheckbox, hndl_colorsCheckbox, colorInline('gray-500'))}
+            {checkBox('w-4/12 pb-1', 'black', sp_colorsCheckbox, hndl_colorsCheckbox, colorInline('gray-900'))}
             {checkBox('w-4/12 pb-1', 'white', sp_colorsCheckbox, hndl_colorsCheckbox, colorInline('slate-100'))}
+            {checkBox('w-4/12 pb-1', 'gray', sp_colorsCheckbox, hndl_colorsCheckbox, colorInline('slate-400'))}
         </div>
     </>
 
     return <>
-        <aside className="md:w-2/12 w-6/12 md:flex hidden bg-zinc-900/[0.95] text-slate-200 flex-col p-3 pb-20">
+        <aside className={`2xl:w-2/12 xl:w-3/12 md:w-3/12 w-full md:flex ${sp_openFilter ? 'flex swing-in-left-fwd': 'hidden' } bg-zinc-900/[0.95] text-slate-200 flex-col p-3 pb-20`}>
             <div className="flex w-full justify-between mb-2">
                 <h4 className="text-xl tracking-wider font-bold">Filter</h4>
-                <div className="md:hidden flex cursor-pointer">
+                <div className="md:hidden flex cursor-pointer" onClick={()=>sp_openFilterSet(prev=>!prev)}>
                     <h4 className="text-indigo-700">Collapse</h4>
-                    <Icon name="first_page" size="1.6" tailwindClassName="fill-indigo-700" />
+                    <Icon name="first_page" size="1.6" tailwindClass="fill-indigo-700" />
                 </div>
             </div>
             {/*-- I created this area so that the controlUI will release all Components here */}
