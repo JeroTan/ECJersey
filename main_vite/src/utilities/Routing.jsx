@@ -9,6 +9,8 @@ import Register from '../pages/Register.jsx';
 import Login from '../pages/Login.jsx';
 import Cart from '../pages/cartPage/Cart.jsx';
 import Profile from '../pages/Profile.jsx';
+import ItemPage from '../pages/itemPage/ItemPage.jsx';
+import NotFound from '../pages/NotFound.jsx';
 
 
 const router = createBrowserRouter([
@@ -25,12 +27,16 @@ const router = createBrowserRouter([
         path:'/jersey'
     },
     {
-        element:<></>,
+        element:<NotFound />,
         path:'*'
     },
     {
-        element:<></>,
-        path:'/items/:id'
+        element:<NotFound />,
+        path:'/notfound'
+    },
+    {
+        element:<ItemPage />,
+        path:'/item/:id'
     },
     {
         element:<Register />,

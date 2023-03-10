@@ -85,6 +85,9 @@ import image_81 from "../assets/item/image_81.jpg"
 import image_82 from "../assets/item/image_82.jpg"
 import image_83 from "../assets/item/image_83.jpg"
 
+const starmizer = ()=> (((Math.random() * 5)) / 5)*100;
+const viewmizer = ()=> ((Math.random() * 100)+3).toFixed(0);
+
 export const dt_items = ()=>{
     return [
         {
@@ -96,6 +99,8 @@ export const dt_items = ()=>{
             Size: ['lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['red'],
             Image: image_1,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 2,
@@ -106,6 +111,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl'],
             Color: ['yellow'],
             Image: image_2,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 3,
@@ -116,6 +123,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['green'],
             Image: image_3,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 4,
@@ -126,6 +135,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['violet'],
             Image: image_4,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 5,
@@ -136,6 +147,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['white'],
             Image: image_5,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 6,
@@ -146,6 +159,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['blue'],
             Image: image_6,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 7,
@@ -156,6 +171,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['gray'],
             Image: image_7,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 8,
@@ -166,6 +183,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['black'],
             Image: image_8,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 9,
@@ -176,6 +195,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['white'],
             Image: image_9,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 10,
@@ -186,6 +207,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['blue'],
             Image: image_10,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 11,
@@ -196,6 +219,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['black'],
             Image: image_11,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 12,
@@ -206,6 +231,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['red'],
             Image: image_12,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 13,
@@ -216,6 +243,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['white'],
             Image: image_13,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 14,
@@ -226,6 +255,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['black'],
             Image: image_14,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 15,
@@ -236,6 +267,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['white'],
             Image: image_15,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 16,
@@ -246,6 +279,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['blue'],
             Image: image_16,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 17,
@@ -256,6 +291,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['green'],
             Image: image_17,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 18,
@@ -266,6 +303,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['white'],
             Image: image_18,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 19,
@@ -276,6 +315,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['blue'],
             Image: image_19,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 20,
@@ -286,6 +327,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['white'],
             Image: image_20,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 21,
@@ -296,6 +339,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['blue'],
             Image: image_21,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 22,
@@ -306,6 +351,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['violet'],
             Image: image_22,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 23,
@@ -316,6 +363,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['black'],
             Image: image_23,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 24,
@@ -326,6 +375,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['black'],
             Image: image_24,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 25,
@@ -336,6 +387,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['blue'],
             Image: image_25,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 26,
@@ -346,6 +399,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['blue'],
             Image: image_26,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 27,
@@ -356,6 +411,8 @@ export const dt_items = ()=>{
             Size: ['xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['black'],
             Image: image_27,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 28,
@@ -366,6 +423,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['blue green'],
             Image: image_28,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 29,
@@ -376,6 +435,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['blue'],
             Image: image_29,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 30,
@@ -386,6 +447,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['black'],
             Image: image_30,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 31,
@@ -396,6 +459,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['white'],
             Image: image_31,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 32,
@@ -406,6 +471,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['blue'],
             Image: image_32,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 33,
@@ -416,6 +483,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['black'],
             Image: image_33,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 34,
@@ -426,6 +495,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['black'],
             Image: image_34,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 35,
@@ -436,6 +507,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['gold'],
             Image: image_35,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 36,
@@ -446,6 +519,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['blue'],
             Image: image_36,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 37,
@@ -456,6 +531,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['red'],
             Image: image_37,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 38,
@@ -466,6 +543,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['white'],
             Image: image_38,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 39,
@@ -476,6 +555,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['white'],
             Image: image_39,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 40,
@@ -486,6 +567,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['green'],
             Image: image_40,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 41,
@@ -496,6 +579,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['yellow'],
             Image: image_41,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 42,
@@ -506,6 +591,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['black'],
             Image: image_42,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 43,
@@ -516,6 +603,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['yellow'],
             Image: image_43,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 44,
@@ -526,6 +615,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
             Color: ['red'],
             Image: image_44,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 45,
@@ -536,6 +627,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['white'],
             Image: image_45,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 46,
@@ -546,6 +639,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['yellow'],
             Image: image_46,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 47,
@@ -556,6 +651,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['violet'],
             Image: image_47,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 48,
@@ -566,6 +663,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['blue'],
             Image: image_48,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 49,
@@ -576,6 +675,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['blue'],
             Image: image_49,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 50,
@@ -586,6 +687,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['blue'],
             Image: image_50,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 51,
@@ -596,6 +699,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['white'],
             Image: image_51,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 52,
@@ -606,6 +711,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['black'],
             Image: image_52,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 53,
@@ -616,6 +723,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['yellow'],
             Image: image_53,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 54,
@@ -626,6 +735,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['blue'],
             Image: image_54,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 55,
@@ -636,6 +747,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['red'],
             Image: image_55,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 56,
@@ -646,6 +759,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['black'],
             Image: image_56,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 57,
@@ -656,6 +771,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['white'],
             Image: image_57,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 58,
@@ -666,6 +783,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['black'],
             Image: image_58,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 59,
@@ -676,6 +795,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['yellow'],
             Image: image_59,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 60,
@@ -686,6 +807,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl'],
             Color: ['blue'],
             Image: image_60,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 61,
@@ -696,6 +819,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['red'],
             Image: image_61,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 62,
@@ -706,6 +831,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['blue green'],
             Image: image_62,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 63,
@@ -716,6 +843,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['white'],
             Image: image_63,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 64,
@@ -726,6 +855,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['blue'],
             Image: image_64,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 65,
@@ -736,6 +867,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['white'],
             Image: image_65,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 66,
@@ -746,6 +879,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['gold'],
             Image: image_66,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 67,
@@ -756,6 +891,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['blue'],
             Image: image_67,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 68,
@@ -766,6 +903,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['white'],
             Image: image_68,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 69,
@@ -776,6 +915,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['black'],
             Image: image_69,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 70,
@@ -786,6 +927,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['red'],
             Image: image_70,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 71,
@@ -796,6 +939,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['white'],
             Image: image_71,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 72,
@@ -806,6 +951,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['black'],
             Image: image_72,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 73,
@@ -816,6 +963,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['blue'],
             Image: image_73,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 74,
@@ -826,6 +975,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['blue'],
             Image: image_74,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 75,
@@ -836,6 +987,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['black'],
             Image: image_75,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 76,
@@ -846,6 +999,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['yellow'],
             Image: image_76,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 77,
@@ -856,6 +1011,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['red'],
             Image: image_77,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 78,
@@ -866,6 +1023,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['white'],
             Image: image_78,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 79,
@@ -876,6 +1035,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['green'],
             Image: image_79,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 80,
@@ -886,6 +1047,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['black'],
             Image: image_80,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 81,
@@ -896,6 +1059,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['black'],
             Image: image_81,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 82,
@@ -906,6 +1071,8 @@ export const dt_items = ()=>{
             Size: ['md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['blue'],
             Image: image_82,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
         {
             ID: 83,
@@ -916,6 +1083,8 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['yellow'],
             Image: image_83,
+            Rating: starmizer(),
+            Views: viewmizer(),
         },
     
     

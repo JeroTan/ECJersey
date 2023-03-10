@@ -74,7 +74,7 @@ export default ()=>{
     }
 
     return <>
-    <main className={"bg-gradient-to-r from-indigo-200 via-gray-300 to-pink-200 w-screen h-screen flex items-center justify-center"}>
+    <main className={"bg-gradient-to-r from-sky-200 via-gray-300 to-indigo-200 w-screen h-screen flex items-center justify-center"}>
         <main className={"w-[30em] bg-zinc-800 drop-shadow-xl rounded-md text-slate-100 p-10"}>
             <div className='w-full'>
                 <Link to="/home" className="flex items-end text-xs font-light fill-slate-300 hover:fill-indigo-300 hover:text-indigo-300">

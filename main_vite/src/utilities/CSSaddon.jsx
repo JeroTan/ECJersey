@@ -21,6 +21,7 @@ export default ()=>{
         'text-slate-100',
         'fill-slate-100',
         'fill-indigo-700',
+        'border',
     ]
 
     return <>

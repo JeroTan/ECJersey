@@ -37,7 +37,7 @@ export default ()=>{
         let stopColor = false;
 
         return <>
-        <div className="w-full aspect-[30/35] bg-slate-200 box-border drop-shadow-xl p-3 cursor-pointer scale-up-center">
+        <div className="w-full aspect-[30/35] bg-slate-200 box-border drop-shadow-xl p-3 cursor-pointer scale-up-center" onClick={()=>{rt_navigate(navigation)}}>
             {/*Image*/}
             <div className="w-full aspect-[10/8] overflow-hidden">
                 <div className="w-full h-full">
@@ -123,7 +123,7 @@ export default ()=>{
                 {
                     itemizer.length > 0 ?
                     itemizer.map(item=>{
-                        return <ItemContainer key={item.ID} title={item.Name} navigation={`item/${item.ID}`} sizes={item.Size} colors={item.Color} price={item.Price} image={item.Image}/>
+                        return <ItemContainer key={item.ID} title={item.Name} navigation={`/item/${item.ID}`} sizes={item.Size} colors={item.Color} price={item.Price} image={item.Image}/>
                     }) :
                     ''
                 }

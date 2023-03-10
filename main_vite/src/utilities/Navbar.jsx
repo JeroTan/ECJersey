@@ -13,6 +13,7 @@ import logo from '../assets/ec_jersey.jpg';
 import './Navbar.css'
 import { pop_info } from "./Sweetalert.jsx";
 
+// Logic to check what page is currently the user is
 const vrt_css = (page)=>{
     let vrt = {
         links:{
@@ -267,15 +268,6 @@ export default ()=>{
             </div>
         </header>
         ) : ''
-    }
-
-    {/*Option when user have login*/}
-    {sp_openAccountOption == true ? <>
-        <header>
-
-        </header>
-    </> :
-    ''
     }
     
     <div className="block w-full bg-gray-200 h-20"></div>
