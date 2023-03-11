@@ -7,10 +7,11 @@ import Home from '../pages/Home.jsx';
 import Jersey from '../pages/Jersey.jsx';
 import Register from '../pages/Register.jsx';
 import Login from '../pages/Login.jsx';
-import Cart from '../pages/cartPage/Cart.jsx';
+import Cart from '../pages/cartPage/CartView.jsx';
 import Profile from '../pages/Profile.jsx';
 import ItemPage from '../pages/itemPage/ItemPage.jsx';
 import NotFound from '../pages/NotFound.jsx';
+import Shoes from '../pages/Shoes.jsx';
 
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
     {
         element:<Jersey/>,
         path:'/jersey'
+    },
+    {
+        element: <Shoes />,
+        path:'/shoes',
     },
     {
         element:<NotFound />,

@@ -18,7 +18,6 @@ export default ()=>{
     let gbl_search = useContext(Gbl_itemSearch);
     let { sp_currentPage, sp_currentPageSet } = useContext(Gbl_currentPage);
     let { logo } = useContext(Gbl_teamLogo);
-
     
     // useState
     let [sp_catCheckbox, sp_catCheckboxSet] = useState({
@@ -94,9 +93,18 @@ export default ()=>{
     })
 
     // useEffect
+
     useEffect(()=>{
-        sp_itemControlSet( {
-            category: sp_catCheckbox,
+        let categories = {
+            allCategory: sp_currentPage == 'home' || sp_currentPage == 'none',
+            jersey: sp_currentPage == 'jersey',
+            shoes: sp_currentPage == 'shoes',
+            bottoms: sp_currentPage == 'bottoms',
+            accessories: sp_currentPage == 'accessories'
+        }
+        sp_catCheckboxSet(categories)
+        let itemSet = {
+            category: categories,
             price:{
                 sort: sp_priceSort,
                 range: sp_priceRange
@@ -104,8 +112,9 @@ export default ()=>{
             team: sp_teamCheckbox,
             size: sp_sizesCheckbox,
             color: sp_colorsCheckbox
-        } ); 
-    }, [])
+        }
+        sp_itemControlSet( itemSet ); 
+    }, [sp_currentPage])
 
     //-- I use this to initiate Ui of the control by dividing them per filter
     let controlUI = {};

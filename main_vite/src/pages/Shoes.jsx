@@ -18,7 +18,7 @@ export default ()=>{
         runReminder(sp_reminder, sp_reminderSet);
     }, []);
 
-    sp_currentPageSet('jersey')
+    sp_currentPageSet('shoes')
     
     return <>
         <Navbar />

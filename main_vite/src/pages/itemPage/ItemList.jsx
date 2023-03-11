@@ -1,4 +1,4 @@
-import { useState, useContext, useRef } from 'react';
+import { useState, useContext, useRef, useEffect } from 'react';
 import {useNavigate} from 'react-router-dom';
 
 /// utilities
@@ -6,7 +6,7 @@ import { ColorTransform } from '../../utilities/ColorTransform';
 import { ItemGetter } from '../../utilities/ItemGetter';
 import Icon from '../../utilities/Icon';
 
-/// pages
+/// Global
 import { Gbl_itemControl } from './ItemCatalog';
 import { Gbl_items } from '../../data/Item';
 import { Gbl_itemSearch } from '../../data/Search';
@@ -29,8 +29,7 @@ export default ()=>{
     // useState
     const [sp_viewType, sp_viewTypeSet] = useState('window');
 
-    // useRef
-    const rf_searchButton = useRef('');
+    // useEffect
 
     const ItemContainer = ({title='', navigation='', sizes=[], colors=[], price=0, image=''})=>{
         let stopSize = false;

@@ -1,4 +1,4 @@
-import { useContext, useState, useRef } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 /// utilities
 import Icon from './Icon.jsx';
@@ -44,13 +44,31 @@ export default ()=>{
     const [sp_dropDown, sp_dropDownSet] = useState(false);
     const [sp_openBurger, sp_openBurgerSet] = useState(false);
     const [sp_openAccountOption, sp_openAccountOptionSet] = useState(false);
+    const [sp_cartTotal, sp_cartTotalSet] = useState(0);
+    const [ cartAnimation, cartAnimationSet ] = useState(false);
+    const [ lastCartTotal, lastCartTotalSet ] = useState(0);
 
     // useContext
-    let {sp_search, sp_searchSet}  = useContext(Gbl_itemSearch);
+    let { sp_search, sp_searchSet }  = useContext(Gbl_itemSearch);
     const {sp_session, sp_sessionSet} = useContext(Gbl_session);
     const { sp_currentPage, sp_currentPageSet } = useContext(Gbl_currentPage);
-
     const { sp_cart, sp_cartSet } = useContext(Gbl_cart);
+
+
+    useEffect(()=>{
+        if(lastCartTotal > 0){
+            cartAnimationSet(true);
+        }
+        lastCartTotalSet(prev=>prev+1);
+        let timer;
+        if(cartAnimation){
+            timer = setInterval(()=>{
+                cartAnimationSet(false);
+                clearInterval(timer);
+            }, 500);
+        }
+        return ()=>clearInterval(timer);
+    }, [sp_cart.length])
 
     // useNavigate
     const navigation = useNavigate();
@@ -171,7 +189,7 @@ export default ()=>{
                             <label className="px-3">{`${sp_session.Data.Lastname}, ${sp_session.Data.Firstname}`}</label>
                         </div>
                         <div className="h-full flex items-center justify-center px-1 cursor-pointer" onClick={()=>{}}>
-                            <div className="relative after:absolute after:rounded-full after:w-4 after:h-4 after:content-[attr(cartvalue)] after:top-0 after:right-0 after:bg-indigo-700 after:text-xs after:text-center after:translate-y-[-25%] after:translate-x-[25%]" cartvalue={sp_cart.length} >
+                            <div className={`relative after:absolute after:rounded-full after:w-4 after:h-4 after:content-[attr(cartvalue)] after:top-0 after:right-0 after:bg-indigo-700 after:text-xs after:text-center after:translate-y-[-25%] after:translate-x-[25%] ${cartAnimation ? 'jello-horizontal':'' }`} cartvalue={sp_cart.length} onClick={()=>{navigation('/cart')}}>
                                 <Icon name="cart" size="2" tailwindClass="fill-slate-200"/>
                             </div>
                         </div>
@@ -226,7 +244,7 @@ export default ()=>{
                             <label>{`${sp_session.Data.Lastname}, ${sp_session.Data.Firstname}`}</label>
                         </div>
                         <div className="h-full flex items-center justify-center px-1 cursor-pointer" onClick={()=>{}}>
-                            <div className="relative after:absolute after:rounded-full after:w-4 after:h-4 after:content-[attr(cartvalue)] after:top-0 after:right-0 after:bg-indigo-700 after:text-xs after:text-center after:translate-y-[-25%] after:translate-x-[25%]" cartvalue={sp_cart.length} >
+                            <div className="relative after:absolute after:rounded-full after:w-4 after:h-4 after:content-[attr(cartvalue)] after:top-0 after:right-0 after:bg-indigo-700 after:text-xs after:text-center after:translate-y-[-25%] after:translate-x-[25%]" cartvalue={sp_cart.length} onClick={()=>{navigation('/cart')}}>
                                 <Icon name="cart" size="1.5" tailwindClass="fill-slate-200"/>
                             </div>
                         </div>

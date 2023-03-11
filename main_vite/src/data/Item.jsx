@@ -87,6 +87,7 @@ import image_83 from "../assets/item/image_83.jpg"
 
 const starmizer = ()=> (((Math.random() * 5)) / 5)*100;
 const viewmizer = ()=> ((Math.random() * 100)+3).toFixed(0);
+const quantimizer = ()=> ((Math.random()* 100)+99).toFixed(0);
 
 export const dt_items = ()=>{
     return [
@@ -101,6 +102,7 @@ export const dt_items = ()=>{
             Image: image_1,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 2,
@@ -113,6 +115,7 @@ export const dt_items = ()=>{
             Image: image_2,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 3,
@@ -125,6 +128,7 @@ export const dt_items = ()=>{
             Image: image_3,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 4,
@@ -137,6 +141,7 @@ export const dt_items = ()=>{
             Image: image_4,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 5,
@@ -149,6 +154,7 @@ export const dt_items = ()=>{
             Image: image_5,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 6,
@@ -161,6 +167,7 @@ export const dt_items = ()=>{
             Image: image_6,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 7,
@@ -173,6 +180,7 @@ export const dt_items = ()=>{
             Image: image_7,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 8,
@@ -185,6 +193,7 @@ export const dt_items = ()=>{
             Image: image_8,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 9,
@@ -197,6 +206,7 @@ export const dt_items = ()=>{
             Image: image_9,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 10,
@@ -209,6 +219,7 @@ export const dt_items = ()=>{
             Image: image_10,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 11,
@@ -221,6 +232,7 @@ export const dt_items = ()=>{
             Image: image_11,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 12,
@@ -233,6 +245,7 @@ export const dt_items = ()=>{
             Image: image_12,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 13,
@@ -245,6 +258,7 @@ export const dt_items = ()=>{
             Image: image_13,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 14,
@@ -257,6 +271,7 @@ export const dt_items = ()=>{
             Image: image_14,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 15,
@@ -269,6 +284,7 @@ export const dt_items = ()=>{
             Image: image_15,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 16,
@@ -281,6 +297,7 @@ export const dt_items = ()=>{
             Image: image_16,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 17,
@@ -293,6 +310,7 @@ export const dt_items = ()=>{
             Image: image_17,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 18,
@@ -305,6 +323,7 @@ export const dt_items = ()=>{
             Image: image_18,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 19,
@@ -317,6 +336,7 @@ export const dt_items = ()=>{
             Image: image_19,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 20,
@@ -329,6 +349,7 @@ export const dt_items = ()=>{
             Image: image_20,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 21,
@@ -341,6 +362,7 @@ export const dt_items = ()=>{
             Image: image_21,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 22,
@@ -353,6 +375,7 @@ export const dt_items = ()=>{
             Image: image_22,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 23,
@@ -365,6 +388,7 @@ export const dt_items = ()=>{
             Image: image_23,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 24,
@@ -377,6 +401,7 @@ export const dt_items = ()=>{
             Image: image_24,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 25,
@@ -389,6 +414,7 @@ export const dt_items = ()=>{
             Image: image_25,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 26,
@@ -401,6 +427,7 @@ export const dt_items = ()=>{
             Image: image_26,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 27,
@@ -413,6 +440,7 @@ export const dt_items = ()=>{
             Image: image_27,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 28,
@@ -425,6 +453,7 @@ export const dt_items = ()=>{
             Image: image_28,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 29,
@@ -437,6 +466,7 @@ export const dt_items = ()=>{
             Image: image_29,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 30,
@@ -449,6 +479,7 @@ export const dt_items = ()=>{
             Image: image_30,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 31,
@@ -461,6 +492,7 @@ export const dt_items = ()=>{
             Image: image_31,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 32,
@@ -473,6 +505,7 @@ export const dt_items = ()=>{
             Image: image_32,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 33,
@@ -485,6 +518,7 @@ export const dt_items = ()=>{
             Image: image_33,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 34,
@@ -497,6 +531,7 @@ export const dt_items = ()=>{
             Image: image_34,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 35,
@@ -509,6 +544,7 @@ export const dt_items = ()=>{
             Image: image_35,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 36,
@@ -521,6 +557,7 @@ export const dt_items = ()=>{
             Image: image_36,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 37,
@@ -533,6 +570,7 @@ export const dt_items = ()=>{
             Image: image_37,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 38,
@@ -545,6 +583,7 @@ export const dt_items = ()=>{
             Image: image_38,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 39,
@@ -557,6 +596,7 @@ export const dt_items = ()=>{
             Image: image_39,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 40,
@@ -569,6 +609,7 @@ export const dt_items = ()=>{
             Image: image_40,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 41,
@@ -581,6 +622,7 @@ export const dt_items = ()=>{
             Image: image_41,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 42,
@@ -593,6 +635,7 @@ export const dt_items = ()=>{
             Image: image_42,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 43,
@@ -605,6 +648,7 @@ export const dt_items = ()=>{
             Image: image_43,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 44,
@@ -617,6 +661,7 @@ export const dt_items = ()=>{
             Image: image_44,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 45,
@@ -629,6 +674,7 @@ export const dt_items = ()=>{
             Image: image_45,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 46,
@@ -641,6 +687,7 @@ export const dt_items = ()=>{
             Image: image_46,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 47,
@@ -653,6 +700,7 @@ export const dt_items = ()=>{
             Image: image_47,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 48,
@@ -665,6 +713,7 @@ export const dt_items = ()=>{
             Image: image_48,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 49,
@@ -677,6 +726,7 @@ export const dt_items = ()=>{
             Image: image_49,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 50,
@@ -689,6 +739,7 @@ export const dt_items = ()=>{
             Image: image_50,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 51,
@@ -701,6 +752,7 @@ export const dt_items = ()=>{
             Image: image_51,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 52,
@@ -713,6 +765,7 @@ export const dt_items = ()=>{
             Image: image_52,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 53,
@@ -725,6 +778,7 @@ export const dt_items = ()=>{
             Image: image_53,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 54,
@@ -737,6 +791,7 @@ export const dt_items = ()=>{
             Image: image_54,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 55,
@@ -749,6 +804,7 @@ export const dt_items = ()=>{
             Image: image_55,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 56,
@@ -761,6 +817,7 @@ export const dt_items = ()=>{
             Image: image_56,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 57,
@@ -773,6 +830,7 @@ export const dt_items = ()=>{
             Image: image_57,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 58,
@@ -785,6 +843,7 @@ export const dt_items = ()=>{
             Image: image_58,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 59,
@@ -797,6 +856,7 @@ export const dt_items = ()=>{
             Image: image_59,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 60,
@@ -809,6 +869,7 @@ export const dt_items = ()=>{
             Image: image_60,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 61,
@@ -821,6 +882,7 @@ export const dt_items = ()=>{
             Image: image_61,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 62,
@@ -833,6 +895,7 @@ export const dt_items = ()=>{
             Image: image_62,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 63,
@@ -845,6 +908,7 @@ export const dt_items = ()=>{
             Image: image_63,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 64,
@@ -857,6 +921,7 @@ export const dt_items = ()=>{
             Image: image_64,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 65,
@@ -869,6 +934,7 @@ export const dt_items = ()=>{
             Image: image_65,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 66,
@@ -881,6 +947,7 @@ export const dt_items = ()=>{
             Image: image_66,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 67,
@@ -893,6 +960,7 @@ export const dt_items = ()=>{
             Image: image_67,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 68,
@@ -905,6 +973,7 @@ export const dt_items = ()=>{
             Image: image_68,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 69,
@@ -917,6 +986,7 @@ export const dt_items = ()=>{
             Image: image_69,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 70,
@@ -929,6 +999,7 @@ export const dt_items = ()=>{
             Image: image_70,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 71,
@@ -941,6 +1012,7 @@ export const dt_items = ()=>{
             Image: image_71,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 72,
@@ -953,6 +1025,7 @@ export const dt_items = ()=>{
             Image: image_72,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 73,
@@ -965,6 +1038,7 @@ export const dt_items = ()=>{
             Image: image_73,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 74,
@@ -977,6 +1051,7 @@ export const dt_items = ()=>{
             Image: image_74,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 75,
@@ -989,6 +1064,7 @@ export const dt_items = ()=>{
             Image: image_75,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 76,
@@ -1001,6 +1077,7 @@ export const dt_items = ()=>{
             Image: image_76,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 77,
@@ -1013,6 +1090,7 @@ export const dt_items = ()=>{
             Image: image_77,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 78,
@@ -1025,6 +1103,7 @@ export const dt_items = ()=>{
             Image: image_78,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 79,
@@ -1037,6 +1116,7 @@ export const dt_items = ()=>{
             Image: image_79,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 80,
@@ -1049,6 +1129,7 @@ export const dt_items = ()=>{
             Image: image_80,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 81,
@@ -1061,6 +1142,7 @@ export const dt_items = ()=>{
             Image: image_81,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 82,
@@ -1073,6 +1155,7 @@ export const dt_items = ()=>{
             Image: image_82,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
         {
             ID: 83,
@@ -1085,6 +1168,7 @@ export const dt_items = ()=>{
             Image: image_83,
             Rating: starmizer(),
             Views: viewmizer(),
+            Quantity: quantimizer()
         },
     
     

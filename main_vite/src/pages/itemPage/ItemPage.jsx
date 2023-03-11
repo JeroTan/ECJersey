@@ -5,79 +5,174 @@ import {useNavigate, useParams} from 'react-router-dom';
 import { ColorTransform } from '../../utilities/ColorTransform';
 import Icon from '../../utilities/Icon';
 import { runReminder } from '../../utilities/ReminderRun';
+import { pop_info } from '../../utilities/Sweetalert';
 
 /// Global
 import { Gbl_currentPage } from '../../data/CurrentPage';
 import { Gbl_reminder } from '../../data/Reminder';
 import { Gbl_items } from '../../data/Item';
+import { Gbl_cart } from '../../data/Cart';
+import { Gbl_session } from '../../data/Session';
 
 /// Pages
 import Navbar from '../../utilities/Navbar';
 import Foorter from '../../utilities/Foorter';
 
 /// assets
-import './ItemList.css';
+import './ItemPage.css';
 
 export default ()=>{
     // useParam
     const { id } = useParams();
 
     // useNavigate
-    let nagivation = useNavigate();
+    let navigation = useNavigate();
 
     // useState
     const [ sp_itemSpec, sp_itemSpecSet ] = useState({
         Color: '',
         Size: '',
-        Quantity: ''
+        Quantity: 1
     });
+    const [ sp_itemStatus, sp_itemStatusSet ] = useState('');
 
     // useContext
     const { sp_currentPage, sp_currentPageSet } = useContext(Gbl_currentPage);
     const { sp_reminder, sp_reminderSet } = useContext(Gbl_reminder);
-    const { sp_items, sp_itemsSet_} = useContext(Gbl_items);
+    const { sp_items, sp_itemsSet } = useContext(Gbl_items);
+    const { sp_cart, sp_cartSet } = useContext(Gbl_cart);
+    const { sp_session, sp_sessionSet } = useContext(Gbl_session);
+
+    // useRef
+    const rf_quantity = useRef(1);
 
     // useEffect
     useEffect(() => {
         runReminder(sp_reminder, sp_reminderSet);
     }, []);
 
+    //ignore the error here, it state that if the state change it will update other component but this is only component
     sp_currentPageSet('');
 
     // logic
-    //- Check if the id is legit and if legit then extract the data
+    //--- Check if the id is legit and if legit then extract the data
     const itemData = sp_items.find( item=>item.ID == id );
     if( itemData == false || itemData == undefined || itemData == '' || itemData == 0 ) nagivation('/notfound');
-    //- randomizer of stars
+    //--- Rerun/Set the itemSpecification
+    useEffect(() => {
+        sp_itemSpecSet({
+            Color: itemData.Color[0],
+            Size: itemData.Size[0],
+            Quantity: 1
+        })
+    }, []);
+    //--- randomizer
     const colorPicker = ( colorList )=>{
         return colorList.map(item=>
-            <div key={item} className={`relative cursor-pointer p-1 border ${item == sp_itemSpec.Color?'border-indigo-700':'border-indigo-200'} hover:border-indigo-700`} onClick={()=>{sp_itemSpecSet(prev=>({...prev, Color:item}))}}>
-                {item == sp_itemSpec.Color ? <>
-                    <div className={`absolute top-0 right-0`}>
-                        <Icon name={'rounded_check'} size={0.7} tailwindClass={`fill-indigo-700`}/>
-                    </div>
-                </> : ''
-                }
-                <div className={`w-4 h-4 rounded bg-${ColorTransform(item)}`}>
+        <div key={item} className={`relative cursor-pointer p-1 border ${item == sp_itemSpec.Color?'border-indigo-700':'border-indigo-200'} hover:border-indigo-700`} onClick={()=>{sp_itemSpecSet(prev=>({...prev, Color:item}))}}>
+            {item == sp_itemSpec.Color ? <>
+                <div className={`absolute top-0 right-0`}>
+                    <Icon name={'rounded_check'} size={0.7} tailwindClass={`fill-indigo-700`}/>
                 </div>
+            </> : ''
+            }
+            <div className={`w-4 h-4 rounded bg-${ColorTransform(item)}`}>
             </div>
+        </div>
         )
     }
+    const sizePicker = ( sizeList )=>{
+        return sizeList.map( item=>
+        <div key={item} className={`relative cursor-pointer border ${item == sp_itemSpec.Size?'border-indigo-700':'border-indigo-200'} hover:border-indigo-700`} onClick={()=>{sp_itemSpecSet(prev=>({...prev, Size:item}))}}>
+            {item == sp_itemSpec.Size ? <>
+                <div className={`absolute top-0 right-0`}>
+                    <Icon name={'rounded_check'} size={0.7} tailwindClass={`fill-indigo-700`}/>
+                </div>
+            </> : ''
+            }
+            <div className='flex items-center justify-center w-9 h-9'>
+                <small>{item}</small>
+            </div>
+        </div>    
+        )
+    }
+    const quantityPicker = ( {target} )=>{
+        let origValue = Number(rf_quantity.current.value);
+        origValue = origValue <= target.max ? origValue : target.max;
+        origValue = origValue >= target.min ? origValue : target.min;
+        sp_itemSpecSet(prev=>({...prev, Quantity:origValue}));
+    }
+    
+    // handler
+    const hndl_addToCart = ()=>{
+        if( !sp_session.Login){
+            navigation('/register');
+            return null;
+        }
+
+        if( !(Object.keys(sp_itemSpec).every(key=>Boolean(sp_itemSpec[key])) )){
+            pop_info('warning', 'Please specify the item');
+            return null;
+        }
+
+        let index = sp_cart.findIndex(item=>{
+            let same = true;
+            same = item.ID == itemData.ID;
+            same = item.Color == sp_itemSpec.Color && same;
+            same = item.Size == sp_itemSpec.Size && same;
+            return same;
+        });
+        
+
+        sp_cartSet(prev=>{
+            if(index < 0) return [
+                ...prev,
+                {
+                    ID:itemData.ID,
+                    Quantity:sp_itemSpec.Quantity,
+                    Color:sp_itemSpec.Color,
+                    Size:sp_itemSpec.Size
+                }
+            ]
+            else{
+                let temp = [...prev]
+                temp.splice(index, 1,{
+                    ID:itemData.ID,
+                    Quantity: (prev[index].Quantity+sp_itemSpec.Quantity) < 100 ? (prev[index].Quantity+sp_itemSpec.Quantity): 100,
+                    Color:sp_itemSpec.Color,
+                    Size:sp_itemSpec.Size
+                });
+                return temp;
+            }
+        })
+        sp_itemStatusSet('Product was added to cart.')
+    }
+    useEffect(()=>{
+        let timer;
+        if (Boolean(sp_itemStatus)) {
+            timer = setTimeout(() => {
+                sp_itemStatusSet('');
+            }, 2000);
+        }
+        else
+        return () => clearTimeout(timer);
+    }, [sp_itemStatus])
+
     return <>
     <Navbar />
-    <main className={`bg-gradient-to-r from-sky-900 via-gray-900 to-indigo-900 w-screen h-full flex justify-center py-10 px-2`}>
+    <main className={`bg-gradient-to-r from-sky-900 via-gray-900 to-indigo-900 w-full h-full flex justify-center py-10 px-2`}>
         <main className={`w-[80rem] bg-slate-100 drop-shadow-xl p-2 flex justify-start rounded-sm`}>
             <section className='w-8/12 p-3 '>
                 <div className="w-full aspect-[10/8] bg-slate-200 p-2">
                     <img className="relative w-full h-full object-center object-contain" src={itemData.Image}/>
                 </div>
                 <div className="flex justify-center text-slate-100 mt-3">
-                    <button className="bg-indigo-700 w-6 h-7 text-center flex justify-center items-center">
+                    <button className="bg-indigo-700 w-6 h-7 text-center flex justify-center items-center rounded">
                         <label className='cursor-pointer'>1</label>
                     </button>
                 </div>
             </section>
-            <section className='w-4/12 p-3'>
+            <section className='w-4/12 p-3 relative box-border'>
                 {/*Name of the product*/}
                 <div className='pb-5'>
                     <h2 className="font-semibold tracking-tight text-zinc-900 text-2xl">{itemData.Name}</h2>
@@ -125,16 +220,34 @@ export default ()=>{
                     <div className='pb-2'>
                         <label className='tracking-wider'>Color</label>
                         <div className='pl-10 flex gap-2'>
-                            
                             {colorPicker(itemData.Color)}
                         </div>
                     </div>
                     <div className='pb-2'>
                         <label className='tracking-wider'>Size</label>
+                        <div className='pl-10 flex flex-wrap gap-2'>
+                            {sizePicker(itemData.Size)}
+                        </div>
                     </div>
                     <div className='pb-2'>
                         <label className='tracking-wider'>Quantity</label>
+                        <div className='pl-10 flex'>
+                            <input className={`outline outline-1 focus:outline-indigo-700 outline-indigo-200 p-2 text-xs rounded-sm`} type="number" min="1" max={itemData.Quantity} value={sp_itemSpec.Quantity} onInput={quantityPicker} ref={rf_quantity}/>
+                        </div>
                     </div>
+                </section>
+                {/*4th Section*/}
+                <section className='pt-5'>
+                    <div className='flex gap-2'>
+                        <button className='w-72 py-2 text-slate-100 bg-sky-500 hover:bg-sky-700 duration-500'>Buy</button>
+                        <button className='w-72 py-2 text-slate-100 bg-indigo-700 hover:bg-indigo-900 duration-200' onClick={hndl_addToCart}>Add Cart</button>
+                    </div>
+                </section>
+                {/*5th Section*/}
+                <section className='w-full flex justify-end items-end'> 
+                    <small className={`tracking-wide text-indigo-700 ${Boolean(sp_itemStatus)?'flip-in-ver-left':''}`}>
+                        {sp_itemStatus}
+                    </small>
                 </section>
             </section>
         </main>

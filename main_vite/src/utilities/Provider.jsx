@@ -20,21 +20,23 @@ export default (ElementTunnel)=>{
     const [ sp_currentPage, sp_currentPageSet ] = useState('home');
 
     return <>
+        <Gbl_currentPage.Provider value={{sp_currentPage, sp_currentPageSet}}>
         <Gbl_items.Provider value={{sp_items, sp_itemsSet}}>
         <Gbl_itemSearch.Provider value={{sp_search, sp_searchSet}}>
         <Gbl_account.Provider value={{sp_account, sp_accountSet}}>
         <Gbl_session.Provider value={{sp_session, sp_sessionSet}}>
         <Gbl_reminder.Provider value={{sp_reminder, sp_reminderSet}}>
         <Gbl_cart.Provider value={{sp_cart, sp_cartSet}}>
-        <Gbl_currentPage.Provider value={{sp_currentPage, sp_currentPageSet}}>
+        
         {ElementTunnel.children}
-        </Gbl_currentPage.Provider>
+        
         </Gbl_cart.Provider>
         </Gbl_reminder.Provider>
         </Gbl_session.Provider>
         </Gbl_account.Provider>
         </Gbl_itemSearch.Provider>
         </Gbl_items.Provider>
+        </Gbl_currentPage.Provider>
         
     </>
 }

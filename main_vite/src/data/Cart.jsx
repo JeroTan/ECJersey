@@ -2,13 +2,10 @@ import { createContext } from "react"
 
 /*format
 [
-    cartID: 0,
-    totalItem: 10,
-    itemID: 1,
-    specification:{
-        size: 'xl'
-        color: 'red'
-    }
+    ID: 1,
+    Quantity: 10,
+    Size: 'xl'
+    Color: 'red'
 ]
     
 */
