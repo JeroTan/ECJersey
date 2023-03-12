@@ -118,7 +118,8 @@ export default ()=>{
                 Lastname: rf_form.v_lastname.current.value,
                 Email: rf_form.v_email.current.value.toString().toLowerCase(),
                 Password: rf_form.v_password.current.value,
-                Profile: ''
+                Profile: '',
+                Address: '',
             }
             sp_accountSet(prev=>[
                 ...prev,

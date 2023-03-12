@@ -12,7 +12,7 @@ import Profile from '../pages/Profile.jsx';
 import ItemPage from '../pages/itemPage/ItemPage.jsx';
 import NotFound from '../pages/NotFound.jsx';
 import Shoes from '../pages/Shoes.jsx';
-
+import Payment from '../pages/invoice/Payment.jsx';
 
 const router = createBrowserRouter([
     {
@@ -58,6 +58,10 @@ const router = createBrowserRouter([
     {
         element:<Cart/>,
         path:'/cart'
+    },
+    {
+        element:<Payment />,
+        path:'/payment'
     }
 ]);
 

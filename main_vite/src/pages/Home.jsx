@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import Swal from "sweetalert2";
 /// utilites
 import Navbar from '../utilities/Navbar';
-import Foorter from "../utilities/Foorter";
+import Footer from "../utilities/Footer";
 /// data
 import { Gbl_currentPage } from "../data/CurrentPage";
 import { Gbl_reminder } from "../data/Reminder";
@@ -27,6 +27,6 @@ export default ()=>{
     return <>
         <Navbar />
         <Catalog />
-        <Foorter />
+        <Footer />
     </>
 } 

@@ -8,7 +8,7 @@ export default ()=>{
     //// Contents ////
     let rendering = <>
 
-    <footer className="relative py-16 flex items-center justify-center bg-zinc-800 box-border z-40 text-slate-100">
+    <footer className="relative py-16 flex items-center justify-center bg-zinc-800 box-border z-40 text-slate-100 shrink-0">
 
         <div className="w-[62rem] flex flex-wrap mx-10">
 

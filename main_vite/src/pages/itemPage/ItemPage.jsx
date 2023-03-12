@@ -16,7 +16,7 @@ import { Gbl_session } from '../../data/Session';
 
 /// Pages
 import Navbar from '../../utilities/Navbar';
-import Foorter from '../../utilities/Foorter';
+import Footer from '../../utilities/Footer';
 
 /// assets
 import './ItemPage.css';
@@ -128,6 +128,7 @@ export default ()=>{
             if(index < 0) return [
                 ...prev,
                 {
+                    CartID: Date.now(),
                     ID:itemData.ID,
                     Quantity:sp_itemSpec.Quantity,
                     Color:sp_itemSpec.Color,
@@ -137,6 +138,7 @@ export default ()=>{
             else{
                 let temp = [...prev]
                 temp.splice(index, 1,{
+                    CartID:prev[index].CartID,
                     ID:itemData.ID,
                     Quantity: (prev[index].Quantity+sp_itemSpec.Quantity) < 100 ? (prev[index].Quantity+sp_itemSpec.Quantity): 100,
                     Color:sp_itemSpec.Color,
@@ -252,6 +254,6 @@ export default ()=>{
             </section>
         </main>
     </main>
-    <Foorter />
+    <Footer />
     </>
 }
