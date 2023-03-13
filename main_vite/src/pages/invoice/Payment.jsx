@@ -21,6 +21,7 @@ import Navbar from '../../utilities/Navbar';
 import Footer from '../../utilities/Footer';
 
 /// assets
+import img_gcash from '../../assets/images/gcashLogo.png'
 
 export default ()=>{
     // useContext
@@ -77,6 +78,25 @@ export default ()=>{
                     <div className='pb-1'>
                         <h4 className='font-semibold tracking-wide text-xl w-full text-right'>Payment Method</h4>
                     </div>
+                    <div className='my-2 border-2 border-indigo-100 bg-slate-200 rounded-lg flex items-center p-2 cursor-pointer hover:border-indigo-500 hover:bg-slate-50'>
+                        <Icon name="cash_on_delivery" size={1.5} tailwindClass="fill-indigo-900" />
+                        <label className='pl-1 tracking-tight'>Cash on Delivery</label>                        
+                    </div>
+                    <div className='my-2 border-2 border-indigo-100 bg-slate-200 rounded-lg flex items-center p-2 cursor-pointer hover:border-indigo-500 hover:bg-slate-50'>
+                        <Icon name="wallet" size={1.3} tailwindClass="fill-indigo-900" />
+                        <label className='pl-1 tracking-tight'>ECJ Wallet</label>                        
+                    </div>
+                    <div className='my-2 border-2 border-indigo-100 bg-slate-200 rounded-lg flex items-center p-2 cursor-pointer hover:border-indigo-500 hover:bg-slate-50'>
+                        <Icon name="credit_card" size={1.3} tailwindClass="fill-indigo-900" />
+                        <label className='pl-1 tracking-tight'>Debit/Master Card</label>                        
+                    </div>
+                    <div className='my-2 border-2 border-indigo-100 bg-slate-200 rounded-lg flex items-center p-2 cursor-pointer hover:border-indigo-500 hover:bg-slate-50'>
+                        <div className="relative w-[1.4rem] aspect-square overflow-hidden">
+                            <img className="relative w-full h-full object-cover object-center" src={img_gcash} />
+                        </div>
+                        <label className='pl-1 tracking-tight'>Gcash </label>                        
+                    </div>
+
                 </section>
                  {/* Pay Button*/}
                  <section>

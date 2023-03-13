@@ -38,6 +38,15 @@ export default ({name, size=1, tailwindClass=''})=>{
         case 'home':
             return <svg xmlns="http://www.w3.org/2000/svg" width={(size*1)+'em'} height={(size*1)+'em'} viewBox="0 0 24 24"><path className={tailwindClass} d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z"></path></svg>
         break;
+        case 'cash_on_delivery':
+            return <svg xmlns="http://www.w3.org/2000/svg" width={(size*1)+'em'} height={(size*1)+'em'} viewBox="0 0 24 24"><path className={tailwindClass} d="M18.5 16.8c-.7 0-1.2-.6-1.2-1.2c0-.7.6-1.2 1.2-1.2s1.2.6 1.2 1.2c.1.6-.5 1.2-1.2 1.2m0-4.8c-1.9 0-3.5 1.6-3.5 3.5c0 2.6 3.5 6.5 3.5 6.5s3.5-3.9 3.5-6.5c0-1.9-1.6-3.5-3.5-3.5m-3.6-.7C14.6 10 13.4 9 12 9c-1.7 0-3 1.3-3 3s1.3 3 3 3c.4 0 .7-.1 1-.2c.2-1.4.9-2.6 1.9-3.5M13 16H7a2 2 0 0 0-2-2v-4a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2s1 0 2 .6V6H3v12h10.5c-.2-.7-.4-1.3-.5-2Z"></path></svg>
+        break;
+        case 'wallet':
+            return <svg xmlns="http://www.w3.org/2000/svg" width={(size*1)+'em'} height={(size*1)+'em'} viewBox="0 0 24 24"><path className={tailwindClass} d="M10 16V8a2 2 0 0 1 2-2h9V5c0-1.1-.9-2-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-1h-9a2 2 0 0 1-2-2zm3-8c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h9V8h-9zm3 5.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5s1.5.67 1.5 1.5s-.67 1.5-1.5 1.5z"></path></svg>
+        break;
+        case 'credit_card':
+            return <svg xmlns="http://www.w3.org/2000/svg" width={(size*1)+'em'} height={(size*1)+'em'} viewBox="0 0 24 24"><path className={tailwindClass} d="M4 20q-.825 0-1.412-.587Q2 18.825 2 18V6q0-.825.588-1.412Q3.175 4 4 4h16q.825 0 1.413.588Q22 5.175 22 6v12q0 .825-.587 1.413Q20.825 20 20 20Zm0-8h16V8H4Z"></path></svg>
+        break;
         case 'person':
             return <svg xmlns="http://www.w3.org/2000/svg" width={(size*1)+'em'} height={(size*1)+'em'} viewBox="0 0 24 24"><path className={tailwindClass} d="M12 12q-1.65 0-2.825-1.175T8 8q0-1.65 1.175-2.825T12 4q1.65 0 2.825 1.175T16 8q0 1.65-1.175 2.825T12 12Zm-8 8v-2.8q0-.85.438-1.563T5.6 14.55q1.55-.775 3.15-1.163T12 13q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20H4Z"></path></svg>
         break;
