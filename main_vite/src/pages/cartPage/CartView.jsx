@@ -53,9 +53,9 @@ export default ()=>{
         let itemDetails = sp_items.find(item=>item.ID == cartItem.ID);
         
         return <>
-        <div key={cartItem.CartID} className={`w-full flex justify-between p-2 gap-x-2 bg-slate-100`}>
+        <div key={cartItem.CartID} className={`w-full flex justify-between p-2 gap-x-2 bg-slate-100`} for={cartItem.CartID}>
             <section className='flex items-center'>
-                <input type="checkbox" value={cartItem.CartID} className='border border-indigo-500' onClick={({target})=>{
+                <input id={cartItem.CartID} type="checkbox" value={cartItem.CartID} className='border border-indigo-500' onClick={({target})=>{
                     let checkoutIndex = sp_checkout.findIndex(item=>item.CartID == cartItem.CartID);
                     let cartIndex = sp_cart.findIndex(item=>item.CartID == cartItem.CartID );
                     if(target.checked){
