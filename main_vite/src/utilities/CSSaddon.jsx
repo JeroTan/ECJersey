@@ -22,6 +22,7 @@ export default ()=>{
         'fill-slate-100',
         'fill-indigo-700',
         'border',
+        'overflow-hidden'
     ]
 
     return <>

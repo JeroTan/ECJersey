@@ -9,6 +9,7 @@ import logo from '../assets/ec_jersey.jpg';
 /// utlities
 import Icon from "../utilities/Icon"
 import { pop_info } from '../utilities/Sweetalert';
+import './Page.css';
 
 export default ()=>{
 
@@ -126,11 +127,10 @@ export default ()=>{
                 data
             ]
             )
-            sp_sessionSet(prev=>({
+            sp_sessionSet({
                 Login: true,
                 Data:data,
-            })
-            );
+            });
             sp_reminderSet(prev=>[
                 ...prev,
                 {
@@ -147,8 +147,8 @@ export default ()=>{
     }
 
     return <>
-    <main className={"bg-gradient-to-r from-sky-200 via-gray-300 to-indigo-200 w-screen h-screen flex items-center justify-center"}>
-        <main className={"w-[30em] bg-zinc-800 drop-shadow-xl rounded-md text-slate-100 p-10"}>
+    <main className={"bg-gradient-to-r from-sky-200 via-gray-300 to-indigo-200 w-screen h-screen flex items-center justify-center "}>
+        <main className={"w-[30em] bg-zinc-800 drop-shadow-xl rounded-md text-slate-100 p-10 swing-in-left-bck"}>
             <div className='w-full'>
                 <Link to="/home" className="flex items-end text-xs font-light fill-slate-300 hover:fill-indigo-300 hover:text-indigo-300">
                     <Icon name="home" size={"1.4"} tailwindClass={" "}/>HOME
@@ -158,14 +158,17 @@ export default ()=>{
             <div className="mt-5 box-border">
                 <h4 className="text-left text-3xl tracking-wide"><strong>Hello</strong>, fill up the form to register today</h4>
             </div>
+            <div className='w-full pt-1'>
+                <small className='text-sm text-slate-500'>Already have an account? Log in <Link className='underline' to={'/login'}>here</Link></small>
+            </div>
             {/*Form*/}
-            <section className="flex flex-wrap mt-10">
-                <div className="w-6/12 pr-3">
+            <section className="flex flex-wrap">
+                <div className="sm:w-6/12 w-full sm:pr-3 mt-10">
                     <label htmlFor="v_firstname" className="tracking-widest text-xs text-slate-300 font-light">FIRSTNAME</label>
                     <input id="v_firstname" type="text" className="w-full pt-1 bg-transparent outline border-b border-slate-300 focus:border-indigo-400 outline-none" ref={rf_form.v_firstname} onInput={()=>{sanitizer("v_firstname")}}></input>
                     { sp_form.v_firstname == false ? <small className="text-red-700">{sp_errorMessage.v_firstname}</small> :'' }
                 </div>
-                <div className="w-6/12 pl-3">
+                <div className="sm:w-6/12 w-full sm:pl-3 mt-10">
                     <label htmlFor="v_lastname" className="tracking-widest text-xs text-slate-300 font-light">LASTNAME</label>
                     <input id="v_lastname" type="text" className="w-full pt-1 bg-transparent outline border-b border-slate-300 focus:border-indigo-400 outline-none" ref={rf_form.v_lastname} onInput={()=>{sanitizer("v_lastname")}}></input>
                     { sp_form.v_lastname == false ? <small className="text-red-700">{sp_errorMessage.v_lastname}</small> :'' }
@@ -176,18 +179,21 @@ export default ()=>{
                     { sp_form.v_email == false ? <small className="text-red-700">{sp_errorMessage.v_email}</small> :'' }
 
                 </div>
-                <div className="w-6/12 pr-3 mt-10">
+                <div className="sm:w-6/12 w-full sm:pr-3 mt-10">
                     <label htmlFor="v_password" className="tracking-widest text-xs text-slate-300 font-light">PASSWORD</label>
                     <input id="v_password" type="password" className="w-full pt-1 bg-transparent outline border-b border-slate-300 focus:border-indigo-400 outline-none" ref={rf_form.v_password} onInput={()=>{sanitizer("v_password"); sanitizePassword('v_password')}}></input>
                     { sp_form.v_password == false ? <small className="text-red-700">{sp_errorMessage.v_password}</small> :'' }
                 </div>
-                <div className="w-6/12 pl-3 mt-10">
+                <div className="sm:w-6/12 w-full sm:pl-3 mt-10">
                     <label htmlFor="v_confirmPassword" className="tracking-widest text-xs text-slate-300 font-light">CONFIRM PASSWORD</label>
                     <input id="v_confirmPassword" type="password" className="w-full pt-1 bg-transparent outline border-b border-slate-300 focus:border-indigo-400 outline-none" ref={rf_form.v_confirmpassword} onInput={()=>{sanitizer("v_confirmpassword"); sanitizePassword('v_confirmpassword')}}></input>
                     { sp_form.v_confirmpassword == false ? <small className="text-red-700">{sp_errorMessage.v_confirmpassword}</small> :'' }
                 </div>
+                <div className='w-full mt-5 '>
+                    <small className='text-slate-500 tracking-wider'>Read Our <Link className='font-bold underline underline-offset-2' to='/privacy'>Privacy and Policy</Link></small>
+                </div>
                 {/*Button*/}
-                <div className="w-full mt-16 flex justify-center">
+                <div className="w-full mt-12 flex justify-center">
                     <div className="w-72">
                         <button className="w-full h-12 rounded-full bg-indigo-700 box-border flex items-center justify-start hover:bg-gradient-to-r from-indigo-800 via-blue-700 to-sky-600 duration-500 ease-in" onClick={()=>hndl_register()}>
                             <div className='h-full p-2'>

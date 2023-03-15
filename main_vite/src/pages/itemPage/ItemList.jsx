@@ -92,11 +92,49 @@ export default ()=>{
             </div>
         </div>
         </>
-        
     }
   
     let itemizer = ItemGetter([sp_search, sp_itemControl.category, sp_itemControl.price, sp_itemControl.team, sp_itemControl.size, sp_itemControl.color], sp_items)
    
+    // randomizer
+    const notFoundmizer = ()=>{
+        switch( Math.floor(Math.random()*10) ){
+            case 0:
+                return `We're sorry, the item you're looking for seems to have vanished into thin air. Did you try calling out its name?`;
+            break;
+            case 1:
+                return `Oi teka lang, wala pa kame nyan, sana'y mahintay mo kame kase ikaw priority namen. uwu`;
+            break;
+            case 2:
+                return `Oh ba't wala, wala ka pala ehh`;
+            break;
+            case 3:
+                return `Wala pa kami nyan ba't yan pinili mo. Parang sliced bread lang kahit ikaw una di ka parin pinili.`;
+            break;
+            case 4:
+                return `We can't find your item, just like dad. . .`;
+            break;
+            case 5:
+                return `Ang lamig, kase wala na siya dito`;
+            break;
+            case 6:
+                return `Kapighatian dahil magpahanggang ngayon ay hindi namin mahanap ang iyong produkto`;
+            break;
+            case 7:
+                return `Sandali, paparating na siya, wala pa ngayon kaya maghintay ka muna.`;
+            break;
+            case 8:
+                return `The item you're looking for is in the same place as my motivation for work today. Nowhere to be found.`;
+            break;
+            case 9:
+                return `Sorry, we couldn't find your item. Maybe I'm the one you are looking for.`;
+            break;
+            default:
+                return `|   | i    ||   |__`;
+            break;
+        }
+    }
+
     return <>
         <main className={`2xl:w-10/12 xl:w-9/12 md:w-9/12 w-full ${sp_openFilter?'hidden':''} bg-slate-300 text-zinc-800 box-border sm:p-10 p-5`}>
             <section className='w-full flex justify-between mb-10'>
@@ -124,7 +162,15 @@ export default ()=>{
                     itemizer.map(item=>{
                         return <ItemContainer key={item.ID} title={item.Name} navigation={`/item/${item.ID}`} sizes={item.Size} colors={item.Color} price={item.Price} image={item.Image}/>
                     }) :
-                    ''
+                    <>
+                    <div className='w-full bg-slate-200 box-border drop-shadow-xl p-3 cursor-pointer scale-up-center'>
+                        <h2 className='text-2xl font-bold'>
+                            Item not Found
+                        </h2>
+                        <small className='text-slate-400'>{notFoundmizer()}</small>
+                        
+                    </div>
+                    </>
                 }
             </section>
         </main>

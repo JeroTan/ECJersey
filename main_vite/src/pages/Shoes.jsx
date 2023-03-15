@@ -1,12 +1,14 @@
 import { useContext, useState, useEffect } from "react";
-///utilites
+import Swal from "sweetalert2";
+/// utilites
 import Navbar from '../utilities/Navbar';
-///data
-import { Gbl_account } from '../data/Account.jsx';
+import Footer from "../utilities/Footer";
+/// data
 import { Gbl_currentPage } from "../data/CurrentPage";
 import { Gbl_reminder } from "../data/Reminder";
 import { runReminder } from "../utilities/ReminderRun";
-
+/// page
+import Catalog from './itemPage/ItemCatalog';
 
 export default ()=>{
     // useContext
@@ -22,5 +24,7 @@ export default ()=>{
     
     return <>
         <Navbar />
+        <Catalog />
+        <Footer />
     </>
 } 

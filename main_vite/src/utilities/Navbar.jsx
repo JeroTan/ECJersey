@@ -126,6 +126,7 @@ export default ()=>{
                 Data:{}
             })
             sp_openAccountOptionSet(false);
+            navigation('/home');
             pop_info('success', 'Account has been logged out');
         }
     }
@@ -245,7 +246,7 @@ export default ()=>{
                         </div>
                         <div className="h-full flex items-center justify-center px-1 cursor-pointer" onClick={()=>{}}>
                             <div className="relative after:absolute after:rounded-full after:w-4 after:h-4 after:content-[attr(cartvalue)] after:top-0 after:right-0 after:bg-indigo-700 after:text-xs after:text-center after:translate-y-[-25%] after:translate-x-[25%]" cartvalue={sp_cart.length} onClick={()=>{navigation('/cart')}}>
-                                <Icon name="cart" size="1.5" tailwindClass="fill-slate-200"/>
+                                <Icon name="cart" size="1.8" tailwindClass="fill-slate-200"/>
                             </div>
                         </div>
                         </>
@@ -263,7 +264,7 @@ export default ()=>{
                 </div>
                 {
                     sp_session.Login == true ? <>
-                    <section className="flex justify-end mb-3 gap-2">
+                    <section className="flex justify-end mb-3 gap-5">
                         <div className="cursor-pointer hover:text-indigo-500 tracking-wider text-slate-300" onClick={()=>{ navigation('/profile') }}>
                             PROFILE
                         </div>

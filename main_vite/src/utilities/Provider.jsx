@@ -9,6 +9,7 @@ import { Gbl_reminder, dt_reminder } from "../data/Reminder";
 import { Gbl_cart, dt_cart } from "../data/Cart";
 import { Gbl_currentPage } from "../data/CurrentPage";
 import { dt_checkout, Gbl_checkout } from "../data/Checkout";
+import { dt_delivery, Gbl_delivery } from "../data/Delivery";
 
 
 export default (ElementTunnel)=>{
@@ -20,6 +21,7 @@ export default (ElementTunnel)=>{
     const [ sp_cart, sp_cartSet ] = useState(dt_cart());
     const [ sp_currentPage, sp_currentPageSet ] = useState('home');
     const [ sp_checkout, sp_checkoutSet ] = useState(dt_checkout());
+    const [ sp_delivery, sp_deliverySet ] = useState(dt_delivery());
 
     return <>
         <Gbl_currentPage.Provider value={{sp_currentPage, sp_currentPageSet}}>
@@ -30,7 +32,9 @@ export default (ElementTunnel)=>{
         <Gbl_reminder.Provider value={{sp_reminder, sp_reminderSet}}>
         <Gbl_cart.Provider value={{sp_cart, sp_cartSet}}>
         <Gbl_checkout.Provider value={{sp_checkout, sp_checkoutSet}}>
-        {ElementTunnel.children}
+        <Gbl_delivery.Provider value={{sp_delivery, sp_deliverySet}}>
+            {ElementTunnel.children}
+        </Gbl_delivery.Provider>
         </Gbl_checkout.Provider>
         </Gbl_cart.Provider>
         </Gbl_reminder.Provider>

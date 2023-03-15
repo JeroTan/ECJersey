@@ -20,7 +20,7 @@ import Navbar from '../../utilities/Navbar';
 import Footer from '../../utilities/Footer';
 
 /// assets
-
+import '../Page.css';
 
 export default ()=>{
     // useContext
@@ -53,7 +53,7 @@ export default ()=>{
         let itemDetails = sp_items.find(item=>item.ID == cartItem.ID);
         
         return <>
-        <div key={cartItem.CartID} className={`w-full flex justify-between p-2 gap-x-2 bg-slate-100`} for={cartItem.CartID}>
+        <div key={cartItem.CartID} className={`w-full flex justify-between p-2 gap-x-2 bg-slate-100`} htmlFor={cartItem.CartID}>
             <section className='flex items-center'>
                 <input id={cartItem.CartID} type="checkbox" value={cartItem.CartID} className='border border-indigo-500' onClick={({target})=>{
                     let checkoutIndex = sp_checkout.findIndex(item=>item.CartID == cartItem.CartID);
@@ -66,6 +66,8 @@ export default ()=>{
                                 ID: itemDetails.ID,
                                 Quantity: sp_cart[cartIndex].Quantity,
                                 Price: itemDetails.Price,
+                                Color: sp_cart[cartIndex].Color,
+                                Size: sp_cart[cartIndex].Size
                             }
                         ])
                     }else if(!target.checked && checkoutIndex > -1){
@@ -85,58 +87,74 @@ export default ()=>{
                     </div>
                 </div>
                 {/* Description */}
-                <div className='w-full'>
-                    <div className='pb-2'>
-                        <h2 className="font-semibold tracking-tight text-zinc-900 text-xl">{itemDetails.Name}</h2>
-                    </div>
-                    <div className='flex justify-between'>
-                        <div className='flex items-center gap-x-1'>
-                            <label className='text-xs'>Color: </label>
-                            <div className={`w-3 h-3 rounded bg-${ColorTransform(cartItem.Color)}`}></div>
-                            <label className='pl-1 text-xs'>Size: </label>
-                            <div>{cartItem.Size}</div>
+                <div className='w-full flex justify-between'>
+                    <section>
+                        <div className='pb-2'>
+                            <h2 className="font-semibold tracking-tight text-zinc-900 text-xl">{itemDetails.Name}</h2>
                         </div>
-                        <div className=''>
-                            <div>
-                                <label className='text-xs'>Quantity</label>
+                        <div className='flex justify-between'>
+                            <div className='flex items-center gap-x-1'>
+                                <label className='text-xs'>Color: </label>
+                                <div className={`w-3 h-3 rounded bg-${ColorTransform(cartItem.Color)}`}></div>
+                                <label className='pl-1 text-xs'>Size: </label>
+                                <div>{cartItem.Size}</div>
                             </div>
-                            <div>
-                                <input className={`outline outline-1 focus:outline-indigo-700 outline-indigo-200 p-1 px-2 text-xs rounded-sm`} type="number" min="1" max={itemDetails.Quantity} value={cartItem.Quantity} onInput={({target})=>{
-                                    let origValue = Number(target.value);
-                                    origValue = origValue <= target.max ? origValue : target.max;
-                                    origValue = origValue >= target.min ? origValue : target.min;
-                                    let index = sp_cart.findIndex(item=>item.CartID == cartItem.CartID);
-                                    sp_cartSet(prev=>{
-                                        let temp = [...prev];
-                                        temp.splice(index, 1,{
-                                            CartID:prev[index].CartID,
-                                            ID:itemDetails.ID,
+                        </div>
+                    </section>
+                    <section>
+                        <div className='flex justify-end'>
+                            <div className='cursor-pointer' onClick={()=>{
+                                let index = sp_cart.findIndex(item=>item.CartID == cartItem.CartID );
+                                sp_cartSet(prev=>{
+                                    let temp = [...prev];
+                                    temp.splice(index, 1);
+                                    return temp;
+                                })
+                            }}>
+                                <Icon name="remove" size="1.5" tailwindClass='fill-red-400' />
+                            </div>
+                            
+                        </div>
+                        <div>
+                            <label className='text-xs'>Quantity</label>
+                        </div>
+
+                        <div>
+                            <input className={`outline outline-1 focus:outline-indigo-700 outline-indigo-200 p-1 px-2 text-xs rounded-sm`} type="number" min="1" max={itemDetails.Quantity} value={cartItem.Quantity} onInput={({target})=>{
+                                let origValue = Number(target.value);
+                                origValue = origValue <= target.max ? origValue : target.max;
+                                origValue = origValue >= target.min ? origValue : target.min;
+                                let index = sp_cart.findIndex(item=>item.CartID == cartItem.CartID);
+                                sp_cartSet(prev=>{
+                                    let temp = [...prev];
+                                    temp.splice(index, 1,{
+                                        CartID:prev[index].CartID,
+                                        ID:itemDetails.ID,
+                                        Quantity: origValue,
+                                        Color:prev[index].Color,
+                                        Size:prev[index].Size
+                                    });
+                                    return temp;
+                                })
+                                let checkoutIndex = sp_checkout.findIndex(item=>item.CartID == cartItem.CartID);
+                                if(checkoutIndex >-1){
+                                    let temp = [...sp_checkout];
+                                    sp_checkoutSet([]);
+                                    sp_checkoutSet(prev=>{
+                                        let temp2 = [...temp];
+                                        temp2.splice(checkoutIndex, 1,{
+                                            CartID: temp[checkoutIndex].CartID,
+                                            ID: itemDetails.ID,
                                             Quantity: origValue,
-                                            Color:prev[index].Color,
-                                            Size:prev[index].Size
+                                            Price: itemDetails.Price,
                                         });
-                                        return temp;
-                                    })
-                                    let checkoutIndex = sp_checkout.findIndex(item=>item.CartID == cartItem.CartID);
-                                    if(checkoutIndex >-1){
-                                        let temp = [...sp_checkout];
-                                        sp_checkoutSet([]);
-                                        sp_checkoutSet(prev=>{
-                                            let temp2 = [...temp];
-                                            temp2.splice(checkoutIndex, 1,{
-                                                CartID: temp[checkoutIndex].CartID,
-                                                ID: itemDetails.ID,
-                                                Quantity: origValue,
-                                                Price: itemDetails.Price,
-                                            });
-                                            return temp2;
-                                        });
-                                    }
-                                    // WELCOME TO HELL!!
-                                }}/>
-                            </div>
+                                        return temp2;
+                                    });
+                                }
+                                // WELCOME TO HELL!!
+                            }}/>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </section>
 
@@ -167,18 +185,18 @@ export default ()=>{
     return <>
     <Navbar/>
     <main className={`bg-gradient-to-r from-sky-900 via-gray-900 to-indigo-900 w-full h-full flex justify-center py-10 px-2 flex-1`}>
-        <main className={`w-[80rem] bg-slate-200 drop-shadow-xl p-2 flex justify-start rounded-sm`}>
-            {/* Checkout Option but on mobile */}
-            <section className='fixed'>
-
-            </section>
+        <main className={`w-[80rem] bg-slate-200 drop-shadow-xl p-2 flex justify-start rounded-sm tilt-in-top-1`}>
             {/* Item Section */}
-            <section className='w-full flex'>
+            <section className='w-full flex flex-wrap'>
                 {/* Item Container */}
-                <main className='w-8/12 flex flex-wrap flex-col gap-y-2'>
+                <main className='lg:w-8/12 md:w-7/12 w-full flex flex-wrap flex-col gap-y-2'>
                     {
-                        sp_cart.length > 0 ?
-                        sp_cart.map((item, index)=><div key={index} className="w-full">{ppl_cartItems(item)}</div>) :
+                        sp_cart.length > 0 ?<>
+                        <div className={`w-full p-2 gap-x-2 bg-slate-100 flex items-center`}>
+                            <Icon name="cart" size={2} tailwindClass="fill-indigo-500" />
+                            <h6 className='tracking-wider font-bold text-2xl text-indigo-900'>Cart</h6>
+                        </div>
+                        {sp_cart.map((item, index)=><div key={index} className="w-full">{ppl_cartItems(item)}</div>)} </> :
                         <div className={`w-full p-2 gap-x-2 bg-slate-100`}>
                             <h6 className='tracking-wider font-bold text-2xl text-indigo-900'>The cart is empty.</h6>
                             <p className='text-slate-400'>You can browse our jersey <Link to="/home" className='underline underline-offset-1 text-indigo-700'>here</Link>.</p>
@@ -186,13 +204,15 @@ export default ()=>{
                     }
                 </main>
                 {/* Checkout Option but on desktop */}
-                <aside className='w-4/12 pt-5'>
-                    <div className='w-full pb-5'>
-                        <h4 className='font-semibold tracking-wide text-2xl text-right w-full'>Total Price</h4>
-                        <h6 className='text-right text-sky-700 tracking-wide text-lg'>&#8369; <span>{ hndl_totalPrice() }</span></h6>
-                    </div>
-                    <div className='w-full flex justify-end'>
-                        <button className='w-72 py-2 text-slate-100 bg-indigo-700 hover:bg-indigo-900 duration-500' onClick={hndl_checkout}>Checkout</button>
+                <aside className='lg:w-4/12 md:w-5/12 w-full p-5'>
+                    <div className='p-5 bg-slate-100 rounded-sm'>
+                        <div className='w-full pb-5'>
+                            <h4 className='font-semibold tracking-wide text-2xl text-right w-full'>Total Price</h4>
+                            <h6 className='text-right text-sky-700 tracking-wide text-lg'>&#8369; <span>{ hndl_totalPrice() }</span></h6>
+                        </div>
+                        <div className='w-full flex justify-end'>
+                            <button className='w-full py-2 text-slate-100 bg-indigo-700 hover:bg-indigo-900 duration-500' onClick={hndl_checkout}>Checkout</button>
+                        </div>
                     </div>
                 </aside>
             </section>

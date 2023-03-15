@@ -4,6 +4,8 @@ import { createContext } from "react"
 [
     CartID:, 1,
     ID: 1,
+    Color: red,
+    Size: 1,
     Quantity: 10,
     Price: 100
 ]

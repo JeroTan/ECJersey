@@ -20,8 +20,8 @@ export default ()=>{
         runReminder(sp_reminder, sp_reminderSet);
     }, []);
 
-    sp_currentPageSet('home');
-
+    sp_currentPageSet('bottoms')
+    
     return <>
         <Navbar />
         <Catalog />

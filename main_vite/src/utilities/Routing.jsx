@@ -13,6 +13,9 @@ import ItemPage from '../pages/itemPage/ItemPage.jsx';
 import NotFound from '../pages/NotFound.jsx';
 import Shoes from '../pages/Shoes.jsx';
 import Payment from '../pages/invoice/Payment.jsx';
+import Bottoms from '../pages/Bottoms.jsx';
+import Accessories from '../pages/Accessories.jsx';
+import Privacy from '../pages/Privacy.jsx';
 
 const router = createBrowserRouter([
     {
@@ -30,6 +33,18 @@ const router = createBrowserRouter([
     {
         element: <Shoes />,
         path:'/shoes',
+    },
+    {
+        element: <Bottoms />,
+        path:'/bottoms',
+    },
+    {
+        element: <Accessories />,
+        path:'/accessories',
+    },
+    {
+        element: <Privacy/>,
+        path: '/privacy'
     },
     {
         element:<NotFound />,

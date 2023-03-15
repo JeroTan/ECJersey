@@ -13,6 +13,7 @@ import { Gbl_reminder } from '../../data/Reminder';
 import { Gbl_items } from '../../data/Item';
 import { Gbl_cart } from '../../data/Cart';
 import { Gbl_session } from '../../data/Session';
+import { Gbl_checkout } from '../../data/Checkout';
 
 /// Pages
 import Navbar from '../../utilities/Navbar';
@@ -42,6 +43,7 @@ export default ()=>{
     const { sp_items, sp_itemsSet } = useContext(Gbl_items);
     const { sp_cart, sp_cartSet } = useContext(Gbl_cart);
     const { sp_session, sp_sessionSet } = useContext(Gbl_session);
+    const { sp_checkout, sp_checkoutSet } = useContext(Gbl_checkout);
 
     // useRef
     const rf_quantity = useRef(1);
@@ -93,7 +95,7 @@ export default ()=>{
             <div className='flex items-center justify-center w-9 h-9'>
                 <small>{item}</small>
             </div>
-        </div>    
+        </div>
         )
     }
     const quantityPicker = ( {target} )=>{
@@ -107,12 +109,12 @@ export default ()=>{
     const hndl_addToCart = ()=>{
         if( !sp_session.Login){
             navigation('/register');
-            return null;
+            return false;
         }
 
         if( !(Object.keys(sp_itemSpec).every(key=>Boolean(sp_itemSpec[key])) )){
             pop_info('warning', 'Please specify the item');
-            return null;
+            return false;
         }
 
         let index = sp_cart.findIndex(item=>{
@@ -123,32 +125,45 @@ export default ()=>{
             return same;
         });
         
-
+        let objectReturner;
         sp_cartSet(prev=>{
-            if(index < 0) return [
-                ...prev,
-                {
+            if(index < 0){
+                objectReturner = {
                     CartID: Date.now(),
                     ID:itemData.ID,
                     Quantity:sp_itemSpec.Quantity,
                     Color:sp_itemSpec.Color,
                     Size:sp_itemSpec.Size
-                }
-            ]
+                };
+                return [
+                    ...prev,
+                    objectReturner,
+                ]
+            } 
             else{
-                let temp = [...prev]
-                temp.splice(index, 1,{
-                    CartID:prev[index].CartID,
+                let temp = [...prev];
+                objectReturner = {
+                    CartID: prev[index].CartID,
                     ID:itemData.ID,
                     Quantity: (prev[index].Quantity+sp_itemSpec.Quantity) < 100 ? (prev[index].Quantity+sp_itemSpec.Quantity): 100,
                     Color:sp_itemSpec.Color,
                     Size:sp_itemSpec.Size
-                });
+                };
+                temp.splice(index, 1, objectReturner);
                 return temp;
             }
         })
-        sp_itemStatusSet('Product was added to cart.')
+        sp_itemStatusSet('Product was added to cart.');
+        return objectReturner;
     }
+    const hndl_directBuy = ()=>{
+        let itemDeclaration = hndl_addToCart();
+        if(itemDeclaration){
+            sp_checkoutSet([{...itemDeclaration, Price:itemData.Price}]);
+            navigation('/payment');
+        }
+    }
+
     useEffect(()=>{
         let timer;
         if (Boolean(sp_itemStatus)) {
@@ -163,8 +178,8 @@ export default ()=>{
     return <>
     <Navbar />
     <main className={`bg-gradient-to-r from-sky-900 via-gray-900 to-indigo-900 w-full h-full flex justify-center py-10 px-2`}>
-        <main className={`w-[80rem] bg-slate-100 drop-shadow-xl p-2 flex justify-start rounded-sm`}>
-            <section className='w-8/12 p-3 '>
+        <main className={`w-[80rem] bg-slate-100 drop-shadow-xl p-2 flex flex-wrap justify-start rounded-sm`}>
+            <section className='lg:w-8/12 md:w-7/12 sm:w-6/12 w-full p-3 '>
                 <div className="w-full aspect-[10/8] bg-slate-200 p-2">
                     <img className="relative w-full h-full object-center object-contain" src={itemData.Image}/>
                 </div>
@@ -174,7 +189,7 @@ export default ()=>{
                     </button>
                 </div>
             </section>
-            <section className='w-4/12 p-3 relative box-border'>
+            <section className='lg:w-4/12 md:w-5/12 sm:w-6/12 w-full p-3 relative box-border'>
                 {/*Name of the product*/}
                 <div className='pb-5'>
                     <h2 className="font-semibold tracking-tight text-zinc-900 text-2xl">{itemData.Name}</h2>
@@ -237,12 +252,18 @@ export default ()=>{
                             <input className={`outline outline-1 focus:outline-indigo-700 outline-indigo-200 p-2 text-xs rounded-sm`} type="number" min="1" max={itemData.Quantity} value={sp_itemSpec.Quantity} onInput={quantityPicker} ref={rf_quantity}/>
                         </div>
                     </div>
+                    <div className='pb-2'>
+                        <label className='tracking-wider'>Price</label>
+                        <div className='pl-10 text-sm text-slate-500'>
+                            &#8369; {itemData.Price}
+                        </div>
+                    </div>
                 </section>
                 {/*4th Section*/}
                 <section className='pt-5'>
                     <div className='flex gap-2'>
-                        <button className='w-72 py-2 text-slate-100 bg-sky-500 hover:bg-sky-700 duration-500'>Buy</button>
-                        <button className='w-72 py-2 text-slate-100 bg-indigo-700 hover:bg-indigo-900 duration-200' onClick={hndl_addToCart}>Add Cart</button>
+                        <button className='sm:w-72 w-full py-2 text-slate-100 bg-sky-500 hover:bg-sky-700 duration-500' onClick={hndl_directBuy}>Buy</button>
+                        <button className='sm:w-72 w-full py-2 text-slate-100 bg-indigo-700 hover:bg-indigo-900 duration-200' onClick={hndl_addToCart}>Add Cart</button>
                     </div>
                 </section>
                 {/*5th Section*/}
