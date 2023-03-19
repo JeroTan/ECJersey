@@ -84,6 +84,7 @@ import image_80 from "../assets/item/image_80.jpg"
 import image_81 from "../assets/item/image_81.jpg"
 import image_82 from "../assets/item/image_82.jpg"
 import image_83 from "../assets/item/image_83.jpg"
+import image_84 from "../assets/item/image_84.jpg"
 
 const starmizer = ()=> (((Math.random() * 5)) / 5)*100;
 const viewmizer = ()=> ((Math.random() * 100)+3).toFixed(0);
@@ -1166,6 +1167,19 @@ export const dt_items = ()=>{
             Size: ['2xsm', 'xsm', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
             Color: ['yellow'],
             Image: image_83,
+            Rating: starmizer(),
+            Views: viewmizer(),
+            Quantity: quantimizer()
+        },
+        {
+            ID: 84,
+            Name: "Durant",
+            Category: "jersey",
+            Price: 2499,
+            Team: "Nets",
+            Size: ['xl'],
+            Color: ['black'],
+            Image: image_84,
             Rating: starmizer(),
             Views: viewmizer(),
             Quantity: quantimizer()

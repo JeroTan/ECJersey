@@ -33,7 +33,7 @@ export default ()=>{
                 We use cookies to improve your browsing experience and personalize content and advertising. By using our website, you consent to our use of cookies. You can adjust your cookie settings at any time in your browser settings.
                 </p>
                 <p className="pb-5">
-                We take your privacy seriously and want you to feel safe and secure while shopping with us. Here at Jersey Heaven, we are committed to protecting your personal information and ensuring that your online experience is enjoyable and hassle-free.
+                We take your privacy seriously and want you to feel safe and secure while shopping with us. Here at EC Jersey, we are committed to protecting your personal information and ensuring that your online experience is enjoyable and hassle-free.
                 </p>
                 <p className="pb-5">
                 We promise to never give you up, never let you down, never run around and desert you. We will never make you cry, never say goodbye, never tell a lie, and hurt you.
@@ -42,7 +42,7 @@ export default ()=>{
                 We never gonna give them your data, never gonna let them know, Never gonna wait around and tell them we don't want to, Never gonna make you worry, Never gonna sell them back, Never gonna tell a scam and deceive you.
                 </p>
                 <p className="pb-5">
-                Thank you for choosing Jersey Heaven as your go-to source for all your jersey needs. We appreciate your business and look forward to serving you again in the future.
+                Thank you for choosing EC Jersey as your go-to source for all your jersey needs. We appreciate your experience and look forward to serving you again in the future.
                 </p>
             </main>
         </main>
